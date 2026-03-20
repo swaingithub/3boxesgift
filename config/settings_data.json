@@ -1,12 +1,3 @@
-/*
- * ------------------------------------------------------------
- * IMPORTANT: The contents of this file are auto-generated.
- *
- * This file may be updated by the Shopify admin theme editor
- * or related systems. Please exercise caution as any changes
- * made to this file may be overwritten.
- * ------------------------------------------------------------
- */
 {
   "current": {
     "colors_solid_button_labels": "#ffffff",
@@ -383,8 +374,8 @@
             "type": "text-content",
             "settings": {
               "width": "33.33%",
-              "header_content_footer": "About 3Boxes",
-              "text_content_footer": "At 3Boxes, the art of thoughtful gifting is more than just an exchange; it's an expression of love, celebration, and appreciation. Our online store is a carefully curated haven of joy, boasting a selection of meticulously crafted gift boxes designed to encapsulate the essence of meaningful surprises.",
+              "header_content_footer": "About 3BoxesGifts",
+              "text_content_footer": "At 3BoxesGifts, the art of thoughtful gifting is more than just an exchange; it's an expression of love, celebration, and appreciation. Our online store is a carefully curated haven of joy, boasting a selection of meticulously crafted gift boxes designed to encapsulate the essence of meaningful surprises.",
               "note": ""
             }
           },
@@ -417,7 +408,7 @@
             "settings": {
               "width": "25%",
               "header_content_footer": "Contact Information",
-              "text_content_footer": "<b>Email :</b> support@3boxes.in<br>\n<b>Phone :</b> +91 9611588311",
+              "text_content_footer": "<b>Email :</b> support@3boxesgifts.in<br>\n<b>Phone :</b> +91 9611588311",
               "note": ""
             }
           }
@@ -566,7 +557,7 @@
         "settings": {
           "fullwidth": false,
           "header_announcement_bar": true,
-          "text_announcement_bar": "<span style=\"font-size:18px;\">🚚Free Shipping Above 599/-</span>",
+          "text_announcement_bar": "✦ &nbsp; Complimentary Shipping On Orders Over ₹599 &nbsp; ✦",
           "color_scheme": "background-1",
           "logo_align": "center",
           "show_header_announcement_right": true,

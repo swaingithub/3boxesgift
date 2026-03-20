@@ -79,19 +79,17 @@
           <div class="col-xl-9 col-lg-9 col-md-6 d-flex justify-content-end align-items-center top-icons">
             <!-- {% render 'home-icon' %} -->
 
-            <div class="col-xl-2 col-lg-2 col-md-2 col-sm-6 text hide child-icon1">
-              <div class="col-2 col-lg-2 col-xl-5 header-icon">
-                {%- if section.settings.header_wishlist -%}
-                  {%- render 'wishlist-header' -%}
-                {%- endif -%}
-                {%- if section.settings.header_sign -%}
-                  {%- render 'home-icon' -%}
-                  {%- render 'header-sign' -%}
-                {%- endif -%}
-                <div class="col-xl-2 col-lg-2 col-md-2 col-sm-6 col-6 text befor child-icon2">
-                  {%- render 'header-cart' -%}
-                </div>
-              </div>
+            <div class="header-luxury-icons d-flex justify-content-end align-items-center" style="width: 100%;">
+              {%- if section.settings.header_wishlist -%}
+                <div class="header-icon-item">{%- render 'wishlist-header' -%}</div>
+              {%- endif -%}
+              
+              {%- if section.settings.header_sign -%}
+                <div class="header-icon-item">{%- render 'home-icon' -%}</div>
+                <div class="header-icon-item">{%- render 'header-sign' -%}</div>
+              {%- endif -%}
+              
+              <div class="header-icon-item">{%- render 'header-cart' -%}</div>
             </div>
           </div>
         {%- endif -%}

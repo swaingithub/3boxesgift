@@ -67,6 +67,11 @@
 
               {%- when 'text-content' -%}
                 <div class="text-content">
+                  {%- if forloop.first -%}
+                    <div style="margin-bottom: 25px;">
+                      <img src="{{ 'logo-black-white.png' | asset_url }}" alt="3Boxes" style="max-width: 140px; object-fit: contain;">
+                    </div>
+                  {%- endif -%}
                   <h2 style="color:{{ section.settings.color_title }};" class="title-footer-content">
                     {{ block.settings.header_content_footer }}
                   </h2>

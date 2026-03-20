@@ -20,23 +20,13 @@
     class="header__icon header__icon--cart link link--text focus-inset"
     id="cart-icon-bubble"
   >
-    <!--
-      {%- liquid
-        if cart == empty
-          render 'icon-cart-empty'
-        else
-          render 'icon-cart'
-        endif
-      -%}
-    -->
-    <div class="img-card d-none d-md-block" >
-      <img src="{{ section.settings.img_quantity | img_url: 'master' }}" alt="">
-    </div>
-    <!--
-      <div class="icon-card-tow d-block d-md-none">
-        {% render 'icon-card-home3' %}
-      </div>
-    -->
+    {%- liquid
+      if cart == empty
+        render 'icon-cart'
+      else
+        render 'icon-cart'
+      endif
+    -%}
     <span class="visually-hidden">{{ 'templates.cart.cart' | t }}</span>
 
     <!--

@@ -1,15 +1,10 @@
 <!-- header-logo.liquid -->
 
 <a href="{{ routes.root_url }}" class="header__heading-link link link--text focus-inset">
-  {%- if settings.logo != blank -%}
-    <img
-      srcset="{{ settings.logo | img_url: 'master' }}"
-      src="{{ settings.logo | img_url: master }}"
-      loading="lazy"
-      class="header__heading-logo"
-      alt="{{ settings.logo.alt | default: shop.name | escape }}"
-    >
-  {%- else -%}
-    <span class="h2">{{ shop.name }}</span>
-  {%- endif -%}
+  <img
+    src="{{ 'logo-transparent-gold.png' | asset_url }}"
+    alt="3Boxes Luxury Curations"
+    class="header__heading-logo"
+    style="max-height: 85px; width: auto; object-fit: contain;"
+  >
 </a>
