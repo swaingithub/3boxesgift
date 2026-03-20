@@ -26,8 +26,12 @@
             {%- assign block_width = 'col-xl-12 col-lg-3 col-md-6 col-sm-6 col-6' -%}
             {%- endcase -%}
             <div class="{{block_width}} collection-item">
+              {%- assign collection_obj = collections[block.settings.collection] -%}
+              {%- if collection_obj == blank or collection_obj.url == blank -%}
+                {%- assign collection_obj = block.settings.collection -%}
+              {%- endif -%}
               <div class="collection-1-content">
-                  <a class="link-collection-1" href="{{ block.settings.collection.url | default:'#' }}">
+                  <a class="link-collection-1" href="{{ collection_obj.url | default:'#' }}">
                     <div class="flex-fake">
                       <div class="collection-content collection-{% if section.settings.effects_image %}image-hover{% else %}image{% endif %} {% if block.settings.image_collection != blank %}media{% else %}image-collection__media--placeholder placeholder{% endif %}" style="padding-bottom: {% if block.settings.image_collection != blank %}{{ 1 | divided_by: block.settings.image_collection.aspect_ratio | times: 100 }}{% else %}100{% endif %}%;" >
                         {%- if block.settings.image_collection != blank -%}
@@ -63,8 +67,8 @@
                       {%- endif -%}
                       </div>
                       <h3 class="title-collection-1 {% if block.settings.title_collection == "top" %} text-top  {% endif %} " {% if block.settings.show_border_bottom %} style="border-bottom: 1px solid {{ block.settings.color_text }};" {%- endif -%}>
-                        <span style=" color: {{ block.settings.color_text }};padding-bottom:{{ block.settings.pd_bottom }}px;">{{ block.settings.collection.title | escape }}{%- if block.settings.collection.title == blank -%}<span>Collection</span>{%- endif -%}</span>
-                        <span class="count">{{ block.settings.collection.products_count | escape }} items</span>
+                        <span style=" color: {{ block.settings.color_text }};padding-bottom:{{ block.settings.pd_bottom }}px;">{{ collection_obj.title | escape }}{%- if collection_obj.title == blank -%}<span>Collection</span>{%- endif -%}</span>
+                        <span class="count">{{ collection_obj.products_count | default: 0 }} items</span>
                       </h3>
                     </div>
                 </a>
