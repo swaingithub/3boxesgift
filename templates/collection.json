@@ -1,0 +1,131 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "banner": {
+      "type": "main-collection-banner",
+      "disabled": true,
+      "custom_css": [
+        ".collection-hero__title {margin-bottom: 30px; margin-top: -2px;}"
+      ],
+      "settings": {
+        "show_collection_description": true,
+        "show_collection_image": false
+      }
+    },
+    "product-grid": {
+      "type": "main-collection-product-grid",
+      "disabled": true,
+      "custom_css": [
+        ".card__labal {display: none;}",
+        ".js-btn-compare,.js-btn-wishlist {display: none;}"
+      ],
+      "settings": {
+        "products_per_page": 12,
+        "products_per_row": 4,
+        "products_per_row_tablet": 3,
+        "products_per_row_mobile": 1,
+        "image_ratio": "adapt",
+        "show_secondary_image": true,
+        "add_image_padding": false,
+        "show_image_outline": true,
+        "show_vendor": false,
+        "show_rating": true,
+        "enable_filtering": true,
+        "position_left_filtering": false,
+        "enable_sorting": true,
+        "collapse_on_larger_devices": false
+      }
+    },
+    "8988eaac-d104-481b-88b3-80669af802a6": {
+      "type": "custom-liquid",
+      "custom_css": [
+        "img {width: 200px;}",
+        ".soon {display: flex; justify-content: center;}"
+      ],
+      "settings": {
+        "custom_liquid": "<div class=\"soon\"><img src=\"https://3boxes.in/cdn/shop/files/3d-casual-life-girl-and-boy-with-boxes_1_360x.png?v=1701156574\"/>\n</div>"
+      }
+    },
+    "88d001cc-2bac-40e7-9c59-12440e14de25": {
+      "type": "rich-text",
+      "blocks": {
+        "template--14846773821545__88d001cc-2bac-40e7-9c59-12440e14de25-heading-1": {
+          "type": "heading",
+          "settings": {
+            "heading": "\"Coming Soon: Something Special Just for You!\"",
+            "heading_size": "h2"
+          }
+        },
+        "template--14846773821545__88d001cc-2bac-40e7-9c59-12440e14de25-text-1": {
+          "type": "text",
+          "settings": {
+            "text": "<p>\"Be the first to know when we launch! Enter your email below for exclusive updates and early access.\"</p>"
+          }
+        },
+        "template--14846773821545__88d001cc-2bac-40e7-9c59-12440e14de25-button-1": {
+          "type": "button",
+          "settings": {
+            "button_label": "Button label",
+            "button_link": "",
+            "button_style_secondary": false
+          }
+        }
+      },
+      "block_order": [
+        "template--14846773821545__88d001cc-2bac-40e7-9c59-12440e14de25-heading-1",
+        "template--14846773821545__88d001cc-2bac-40e7-9c59-12440e14de25-text-1",
+        "template--14846773821545__88d001cc-2bac-40e7-9c59-12440e14de25-button-1"
+      ],
+      "disabled": true,
+      "settings": {
+        "color_scheme": "background-1",
+        "full_width": true
+      }
+    },
+    "5a934bf7-39fe-4844-9084-323ff04dbb2d": {
+      "type": "newsletter",
+      "blocks": {
+        "template--14846773821545__5a934bf7-39fe-4844-9084-323ff04dbb2d-heading-1": {
+          "type": "heading",
+          "settings": {
+            "heading": "\"Coming Soon: Something Special Just for You!\""
+          }
+        },
+        "template--14846773821545__5a934bf7-39fe-4844-9084-323ff04dbb2d-paragraph-1": {
+          "type": "paragraph",
+          "settings": {
+            "text": "<p>\"Be the first to know when we launch! Enter your email below for exclusive updates and early access.\"</p>"
+          }
+        },
+        "template--14846773821545__5a934bf7-39fe-4844-9084-323ff04dbb2d-email_form-1": {
+          "type": "email_form",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "template--14846773821545__5a934bf7-39fe-4844-9084-323ff04dbb2d-heading-1",
+        "template--14846773821545__5a934bf7-39fe-4844-9084-323ff04dbb2d-paragraph-1",
+        "template--14846773821545__5a934bf7-39fe-4844-9084-323ff04dbb2d-email_form-1"
+      ],
+      "settings": {
+        "color_scheme": "background-1",
+        "full_width": true
+      }
+    }
+  },
+  "order": [
+    "banner",
+    "product-grid",
+    "8988eaac-d104-481b-88b3-80669af802a6",
+    "88d001cc-2bac-40e7-9c59-12440e14de25",
+    "5a934bf7-39fe-4844-9084-323ff04dbb2d"
+  ]
+}

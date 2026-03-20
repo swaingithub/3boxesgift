@@ -1,0 +1,118 @@
+.newsletter-big{
+    width: 100%;
+
+}
+.page-width .section-block--padding{
+    padding: 70px 0px;
+    display: flex;
+    align-items: center;
+}
+.page-width .grid{
+    flex:1;
+}
+.page-width .title h4{
+    font-weight: 700;
+    text-align: center;
+    margin: 0;
+    padding: 15px 0;
+    font-size: 15px;
+    color: #000;
+    text-transform: uppercase;
+    display: inline-block;
+    position: relative;
+}
+.page-width .newsletter-content{
+    margin: 0;
+}
+.newsletter-content .grid__item{
+    max-width: 100%;
+}
+.newsletter-content .footer__newsletter{
+    display: flex;
+}
+.newsletter-content .newsletter-form__field-wrapper{
+    flex: 1;
+}
+.newsletter-content .footer__newsletter button{
+    border: none;
+    outline: none;
+    box-shadow: none;
+    text-transform: uppercase;
+    font-size: 12px;
+    font-weight: 700;
+    color: #000;
+    letter-spacing: 2px;
+    border-bottom: 2px dashed #fed2cc;
+    display: inline-block;
+    margin: auto 40px ;
+    padding: 0px;
+    min-height: unset;
+    min-width: unset;
+    height: max-content;
+    transition: all .3s ease;
+}
+.newsletter-content .field__label {
+    width: 100%;
+    font-family: "Josefin Slab",serif;
+    color:#abb5c9;
+    font-size: 1.3rem;
+}
+.newsletter-content .field__input{
+    border: 2px solid #d5dbe6;
+    padding: 17px 15px 15px 20px;
+    margin: 0px;
+    box-shadow: none;
+}
+.newsletter-content .field input[type=email] {
+    padding: 17px 25px 15px 20px;
+    border: 2px solid #ebebeb;
+    
+}
+.page-width .title{
+    margin: 0;
+    padding: 0;
+}
+.page-width .field__input:focus~.field__label{
+    display: none;
+}
+.page-width .button:focus:not(:focus-visible){
+    box-shadow: none;
+}
+.page-width .button:not([disabled]):hover{
+    box-shadow: none;
+    border-bottom: 2px solid #fed2cc;
+    color: var(--color-base-link-hover);
+}
+@media screen and (min-width: 750px){
+    .grid__item {
+        max-width: 50%;
+    }
+    .page-width .newsletter-content{
+        margin: 0;
+    }
+    .newsletter-content .grid__item{
+        padding: 0px;
+    }
+}
+
+@media (min-width: 576px)
+{
+    .page-width .title {
+        width: 25%;
+    }
+    .page-width .title{
+        margin: 0;
+        padding: 0;
+    }
+}
+@media (max-width: 576px)
+{
+    .page-width .section-block--padding{
+        flex-wrap: wrap;
+        padding:50px 10px;
+    }
+    .page-width .grid{
+        flex: unset;
+        width: 100%;
+    }
+}

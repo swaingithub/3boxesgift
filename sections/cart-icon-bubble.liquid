@@ -1,0 +1,54 @@
+{{ 'component-mini-cart.css' | asset_url | stylesheet_tag }}
+{{ 'header-cart-2.css' | asset_url | stylesheet_tag }}
+
+<div class="header-cart">
+  <a
+    href="{{ routes.cart_url }}"
+    class="header__icon header__icon--cart link link--text focus-inset"
+    id="cart-icon-bubble"
+  >
+    <!--
+      {%- liquid
+        if cart == empty
+          render 'icon-cart-empty'
+        else
+          render 'icon-cart'
+        endif
+      -%}
+    -->
+    <div class="img-card d-none d-md-block">
+      <img src="{{ section.settings.img_quantity | img_url: 'master' }}" alt="">
+    </div>
+    <div class="icon-card-tow d-block d-md-none">
+      {% render 'icon-card-home3' %}
+    </div>
+    <span class="visually-hidden">{{ 'templates.cart.cart' | t }}</span>
+
+    <div class="text_content">
+      <div class="cart">
+        <p class="d-none d-md-block">{{ 'general.cart.cart_label' | t }}</p>
+
+        {%- if cart != empty -%}
+          <div class="cart-count-bubble">
+            {%- if cart.item_count < 100 -%}
+              <span aria-hidden="true">{{ cart.item_count }}</span>
+            {%- endif -%}
+            <span class="visually-hidden">{{ 'sections.header.cart_count' | t: count: cart.item_count }}</span>
+          </div>
+        {% else %}
+          <span aria-hidden="true">{{ cart.item_count }}</span>
+        {%- endif -%}
+
+        <p class="items d-none d-md-block">{{ 'general.cart.items_label' | t }}</p>
+      </div>
+      <h3 class="cost">
+        <div class="totals">
+          <span class="total_price">{{ cart.total_price | money }}</span>
+        </div>
+      </h3>
+    </div>
+    <span class="d-none">icon-cart</span>
+  </a>
+
+  {% render 'mini-cart' %}
+</div>

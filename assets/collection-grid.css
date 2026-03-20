@@ -1,0 +1,39 @@
+.collection-grid .collection-1-content .text-top{
+    position: absolute;
+    bottom: 55px;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    display: inline-block;
+    border-bottom: 1px solid #000;
+}
+.collection-grid .collection-1-content .text-top span{
+    display: block;
+    padding-bottom: 15px;
+}
+.collection-grid{
+    text-align: center;
+}
+.collection-grid .container{
+    background:unset;
+}
+.collection-grid .collection-item {
+    padding: 0 5px;
+    margin: 0;
+}
+.collection-grid .collection-1-content{
+    padding: 38px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+.collection-grid .collection-content{
+    border-radius: 0px;
+}
+.collection-grid .title-collection-1{
+    font-size: 14px;
+}
+@media (max-width:1450px) {
+    .collection-grid .collection-1-content{
+        padding: 29px;
+    }
+}

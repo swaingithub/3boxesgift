@@ -1,0 +1,522 @@
+{{ 'footer-2.css' | asset_url | stylesheet_tag }}
+
+<footer class="footer-2" style="background: {{ section.settings.bg_footer_2 }};">
+  <div
+    class="{%- if section.settings.fullwidth -%}container-fluid{%- else -%}container{%- endif -%}"
+    style="background: {{ section.settings.bg_footer_2 }};"
+  >
+    {%- if section.settings.newsletter_enable -%}
+      <div class="top-footer">
+        <div class="newlester-footer">
+          <h2 style="color:{{ section.settings.color_title }};" class="footer-block__heading">
+            {{ section.settings.newsletter_heading | escape }}
+          </h2>
+          {% render 'newlester' %}
+        </div>
+      </div>
+    {%- endif -%}
+
+    <div class="center-footer">
+      <div class="row">
+        {%- for block in section.blocks -%}
+          {%- case block.settings.width -%}
+            {%- when '16.67%' -%}
+              {%- assign block_width = 'col-xl-2 col-lg-3 col-md-6' -%}
+            {%- when '25%' -%}
+              {%- assign block_width = 'col-xl-3 col-lg-3 col-md-6 col-sm-12' -%}
+            {%- when '33.33%' -%}
+              {%- assign block_width = 'col-xl-4 col-md-5' -%}
+            {%- when '42%' -%}
+              {%- assign block_width = 'col-xl-5 col-lg-3 col-md-6' -%}
+            {%- when '50%' -%}
+              {%- assign block_width = 'col-lg-6' -%}
+            {%- when '66.67%' -%}
+              {%- assign block_width = 'col-xl-8 col-md-7' -%}
+            {%- when '75%' -%}
+              {%- assign block_width = 'col-md-9' -%}
+            {%- when '83.33%' -%}
+              {%- assign block_width = 'col-md-10' -%}
+            {%- when '100%' -%}
+              {%- assign block_width = 'col-12' -%}
+          {%- endcase -%}
+          <div class="{{block_width}}">
+            {%- case block.type -%}
+              {%- when 'logo' -%}
+                <div class="logo-footer">
+                  {% if block.settings.image != blank %}
+                    <img
+                      srcset="
+                        {%- if block.settings.image.width >= 165 -%}{{ block.settings.image | img_url: '165x' }} 165w,{%- endif -%}
+                        {%- if block.settings.image.width >= 360 -%}{{ block.settings.image | img_url: '360x' }} 360w,{%- endif -%}
+                        {%- if block.settings.image.width >= 535 -%}{{ block.settings.image | img_url: '535x' }} 535w,{%- endif -%}
+                        {%- if block.settings.image.width >= 750 -%}{{ block.settings.image | img_url: '750x' }} 750w,{%- endif -%}
+                        {%- if block.settings.image.width >= 1070 -%}{{ block.settings.image | img_url: '1070x' }} 1070w,{%- endif -%}
+                        {%- if block.settings.image.width >= 1500 -%}{{ block.settings.image | img_url: '1500x' }} 1500w,{%- endif -%}
+                      "
+                      src="{{ block.settings.image | img_url: '220x' }}"
+                      sizes="(min-width: {{ settings.page_width }}px) {{ settings.page_width | minus: 100 | divided_by: 2 }}px, (min-width: 750px) calc((100vw - 130px) / 2), calc((100vw - 50px) / 2)"
+                      alt="{{ block.settings.image.alt | escape }}"
+                      loading="lazy"
+                      width="{{ block.settings.image.width }}"
+                      height="{{ block.settings.image.height }}"
+                    >
+                  {%- else -%}
+                    <span class="h2">{{ shop.name }}</span>
+                  {%- endif -%}
+                </div>
+
+              {%- when 'text-content' -%}
+                <div class="text-content">
+                  <h2 style="color:{{ section.settings.color_title }};" class="title-footer-content">
+                    {{ block.settings.header_content_footer }}
+                  </h2>
+                  <ul class="list-content-footer">
+                    {{ block.settings.text_content_footer }}
+                  </ul>
+                  <h2 style="color:{{ section.settings.color_title }};" class="note-footer-content">
+                    {{ block.settings.note }}
+                  </h2>
+
+                  {%- if forloop.first and section.settings.show_social -%}
+                    <div class="icon-top col-md-4">
+                      {% render 'social_footer' %}
+                    </div>
+                  {%- endif -%}
+                </div>
+
+              {%- when 'menu' -%}
+                <div class="menu-footer">
+                  <h2 style="color:{{ section.settings.color_title }};" class="title-footer">
+                    {{ block.settings.title_menu }}
+                    <span class="drawer__nav-toggle--open">
+                      <i class="fa fa-angle-down" aria-hidden="true"></i>
+                    </span>
+                  </h2>
+
+                  {% render 'vertical-menu-footer', block: block %}
+                </div>
+
+              {%- when 'map' -%}
+                <div class="map-footer">
+                  <h2 style="color:{{ section.settings.color_title }};" class="title-footer">
+                    {{ block.settings.title_map }}
+                  </h2>
+                  <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3723.986896663616!2d105.7624174147247!3d21.033210293002696!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3134550a23102929%3A0x4ef44b49b102cef7!2zQ8O0bmcgVHkgVE5ISCBHaeG6o2kgUGjDoXAgQnJhaW5vcw!5e0!3m2!1svi!2s!4v1640571903245!5m2!1svi!2s"
+                    width="600"
+                    height="450"
+                    style="border:0;"
+                    allowfullscreen=""
+                    loading="lazy"
+                  ></iframe>
+                </div>
+
+              {%- when 'email' -%}
+                <div class="email-footer">
+                  <h2 style="color:{{ section.settings.color_title }};" class="title-footer">NEWSLETTER</h2>
+                  <p>Subscribe to receive updates, access to exclusive deals, and more.</p>
+                  {% render 'newlester' %}
+                </div>
+            {%- endcase -%}
+          </div>
+        {%- endfor -%}
+      </div>
+    </div>
+
+    <div class="bottom-footer">
+      <div class="row bottom-footer-coppy">
+        {%- if section.settings.show_copyright -%}
+          <div class="{%- if section.settings.show_social -%} col-md-8 {% else %} col-sm-12 {% endif %}">
+            {% render 'footer-copyright' %}
+          </div>
+        {%- endif -%}
+
+        {%- if section.settings.icon_card_footer -%}
+          <div class="col-md-4">
+            {% render 'icon-card-footer' %}
+          </div>
+        {%- endif -%}
+      </div>
+    </div>
+  </div>
+</footer>
+
+{% schema %}
+{
+  "name": "t:sections.footer-2.name",
+  "class": "section-footer",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "fullwidth",
+      "label": "t:sections.footer-2.settings.fullwidth.label",
+      "default": false
+    },
+    {
+      "type": "color",
+      "id": "bg_footer_2",
+      "label": "t:sections.footer-2.settings.bg_footer_2.label"
+    },
+    {
+      "type": "color",
+      "id": "color_title",
+      "label": "t:sections.footer-2.settings.color_title.label"
+    },
+    {
+      "id": "newsletter_enable",
+      "type": "checkbox",
+      "default": true,
+      "label": "t:sections.footer-2.settings.newsletter_enable.label"
+    },
+    {
+      "id": "newsletter_heading",
+      "type": "text",
+      "default": "Sign up to our emails",
+      "label": "t:sections.footer-2.settings.newsletter_heading.label"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_copyright",
+      "label": "t:sections.footer-2.settings.show_copyright.label",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "show_social",
+      "label": "t:sections.footer-2.settings.show_social.label",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "icon_card_footer",
+      "label": "t:sections.footer-2.settings.icon_card_footer.label",
+      "default": true
+    }
+  ],
+  "blocks": [
+  {
+    "type": "logo",
+    "name": "t:sections.footer-2.blocks.logo.name",
+    "settings": [
+    {
+      "type": "select",
+      "id": "width",
+      "label": "t:sections.footer-2.blocks.logo.settings.width.label",
+      "default": "25%",
+      "options": [
+        {
+          "value": "16.67%",
+          "label": "t:sections.footer-2.blocks.logo.settings.width.options__1.label"
+        },
+        {
+          "value": "25%",
+          "label": "t:sections.footer-2.blocks.logo.settings.width.options__2.label"
+        },
+        {
+          "value": "33.33%",
+          "label": "t:sections.footer-2.blocks.logo.settings.width.options__3.label"
+        },
+        {
+          "value": "42%",
+          "label": "t:sections.footer-2.blocks.logo.settings.width.options__9.label"
+        },
+        {
+          "value": "50%",
+          "label": "t:sections.footer-2.blocks.logo.settings.width.options__4.label"
+        },
+        {
+          "value": "66.67%",
+          "label": "t:sections.footer-2.blocks.logo.settings.width.options__5.label"
+        },
+        {
+          "value": "75%",
+          "label": "t:sections.footer-2.blocks.logo.settings.width.options__6.label"
+        },
+        {
+          "value": "83.33%",
+          "label": "t:sections.footer-2.blocks.logo.settings.width.options__7.label"
+        },
+        {
+          "value": "100%",
+          "label": "t:sections.footer-2.blocks.logo.settings.width.options__8.label"
+        }
+      ]
+     },
+      {
+        "type": "image_picker",
+        "id": "image",
+        "label": "t:sections.footer-2.blocks.logo.settings.image.label"
+      }
+    ]
+  },
+  {
+    "type": "text-content",
+    "name": "t:sections.footer-2.blocks.text-content.name",
+    "settings": [
+    {
+      "type": "select",
+      "id": "width",
+      "label": "t:sections.footer-2.blocks.text-content.settings.width.label",
+      "default": "25%",
+      "options": [
+        {
+          "value": "16.67%",
+          "label": "t:sections.footer-2.blocks.text-content.settings.width.options__1.label"
+        },
+        {
+          "value": "25%",
+          "label": "t:sections.footer-2.blocks.text-content.settings.width.options__2.label"
+        },
+        {
+          "value": "33.33%",
+          "label": "t:sections.footer-2.blocks.text-content.settings.width.options__3.label"
+        },
+        {
+          "value": "42%",
+          "label": "t:sections.footer-2.blocks.text-content.settings.width.options__9.label"
+        },
+        {
+          "value": "50%",
+          "label": "t:sections.footer-2.blocks.text-content.settings.width.options__4.label"
+        },
+        {
+          "value": "66.67%",
+          "label": "t:sections.footer-2.blocks.text-content.settings.width.options__5.label"
+        },
+        {
+          "value": "75%",
+          "label": "t:sections.footer-2.blocks.text-content.settings.width.options__6.label"
+        },
+        {
+          "value": "83.33%",
+          "label": "t:sections.footer-2.blocks.text-content.settings.width.options__7.label"
+        },
+        {
+          "value": "100%",
+          "label": "t:sections.footer-2.blocks.text-content.settings.width.options__8.label"
+        }
+      ]
+     },
+      {
+        "type": "text",
+        "id": "header_content_footer",
+        "label": "t:sections.footer-2.blocks.text-content.settings.header_content_footer.label",
+        "default": "title content"
+      },
+      {
+        "type": "liquid",
+        "id": "text_content_footer",
+        "label": "t:sections.footer-2.blocks.text-content.settings.text_content_footer.label",
+        "default": "<li>Monday Closed</li><li>Tuesday - Friday 10 - 18</li><li>Saturday 10 - 16</li>"
+      },
+      {
+        "type": "text",
+        "id": "note",
+        "label": "t:sections.footer-2.blocks.text-content.settings.note.label",
+        "default": "Monday - Friday 8am - 6pm pts."
+      }
+    ]
+  },
+  {
+    "type": "menu",
+    "name": "t:sections.footer-2.blocks.menu.name",
+    "settings": [
+      {
+        "type": "select",
+        "id": "width",
+        "label": "t:sections.footer-2.blocks.menu.settings.width.label",
+        "default": "25%",
+        "options": [
+          {
+            "value": "16.67%",
+            "label": "t:sections.footer-2.blocks.menu.settings.width.options__1.label"
+          },
+          {
+            "value": "25%",
+            "label": "t:sections.footer-2.blocks.menu.settings.width.options__2.label"
+          },
+          {
+            "value": "33.33%",
+            "label": "t:sections.footer-2.blocks.menu.settings.width.options__3.label"
+          },
+          {
+            "value": "42%",
+            "label": "t:sections.footer-2.blocks.menu.settings.width.options__9.label"
+          },
+          {
+            "value": "50%",
+            "label": "t:sections.footer-2.blocks.menu.settings.width.options__4.label"
+          },
+          {
+            "value": "66.67%",
+            "label": "t:sections.footer-2.blocks.menu.settings.width.options__5.label"
+          },
+          {
+            "value": "75%",
+            "label": "t:sections.footer-2.blocks.menu.settings.width.options__6.label"
+          },
+          {
+            "value": "83.33%",
+            "label": "t:sections.footer-2.blocks.menu.settings.width.options__7.label"
+          },
+          {
+            "value": "100%",
+            "label": "t:sections.footer-2.blocks.menu.settings.width.options__8.label"
+          }
+        ]
+      },
+      {
+          "type": "text",
+          "id": "title_menu",
+          "label": "t:sections.footer-2.blocks.menu.settings.title_menu.label",
+          "default": "title menu"
+      },
+      {
+          "type": "link_list",
+          "id": "menu",
+          "label": "t:sections.footer-2.blocks.menu.settings.menu.label",
+          "default": "main-menu"
+        }
+    ]
+  },
+  {
+    "type": "map",
+    "name": "t:sections.footer-2.blocks.map.name",
+    "settings": [
+      {
+        "type": "select",
+        "id": "width",
+        "label": "t:sections.footer-2.blocks.map.settings.width.label",
+        "default": "25%",
+        "options": [
+          {
+            "value": "16.67%",
+            "label": "t:sections.footer-2.blocks.map.settings.width.options__1.label"
+          },
+          {
+            "value": "25%",
+            "label": "t:sections.footer-2.blocks.map.settings.width.options__2.label"
+          },
+          {
+            "value": "33.33%",
+            "label": "t:sections.footer-2.blocks.map.settings.width.options__3.label"
+          },
+          {
+            "value": "42%",
+            "label": "t:sections.footer-2.blocks.map.settings.width.options__9.label"
+          },
+          {
+            "value": "50%",
+            "label": "t:sections.footer-2.blocks.map.settings.width.options__4.label"
+          },
+          {
+            "value": "66.67%",
+            "label": "t:sections.footer-2.blocks.map.settings.width.options__5.label"
+          },
+          {
+            "value": "75%",
+            "label": "t:sections.footer-2.blocks.map.settings.width.options__6.label"
+          },
+          {
+            "value": "83.33%",
+            "label": "t:sections.footer-2.blocks.map.settings.width.options__7.label"
+          },
+          {
+            "value": "100%",
+            "label": "t:sections.footer-2.blocks.map.settings.width.options__8.label"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "id": "title_map",
+        "label": "t:sections.footer-2.blocks.map.settings.title_map.label",
+        "default": "title map"
+      }
+    ]
+  },
+  {
+    "type": "email",
+    "name": "t:sections.footer-2.blocks.email.name",
+    "settings": [
+      {
+        "type": "select",
+        "id": "width",
+        "label": "t:sections.footer-2.blocks.map.settings.width.label",
+        "default": "25%",
+        "options": [
+          {
+            "value": "16.67%",
+            "label": "t:sections.footer-2.blocks.map.settings.width.options__1.label"
+          },
+          {
+            "value": "25%",
+            "label": "t:sections.footer-2.blocks.map.settings.width.options__2.label"
+          },
+          {
+            "value": "33.33%",
+            "label": "t:sections.footer-2.blocks.map.settings.width.options__3.label"
+          },
+          {
+            "value": "42%",
+            "label": "t:sections.footer-2.blocks.map.settings.width.options__9.label"
+          },
+          {
+            "value": "50%",
+            "label": "t:sections.footer-2.blocks.map.settings.width.options__4.label"
+          },
+          {
+            "value": "66.67%",
+            "label": "t:sections.footer-2.blocks.map.settings.width.options__5.label"
+          },
+          {
+            "value": "75%",
+            "label": "t:sections.footer-2.blocks.map.settings.width.options__6.label"
+          },
+          {
+            "value": "83.33%",
+            "label": "t:sections.footer-2.blocks.map.settings.width.options__7.label"
+          },
+          {
+            "value": "100%",
+            "label": "t:sections.footer-2.blocks.map.settings.width.options__8.label"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "id": "title_email",
+        "label": "t:sections.footer-2.blocks.email.settings.title_email.label",
+        "default": "title email"
+      },
+      {
+        "type": "text",
+        "id": "text_email",
+        "label": "t:sections.footer-2.blocks.email.settings.text_email.label",
+        "default": "text"
+      }
+    ]
+  }
+  ],
+  "default": {
+      "blocks": [
+        {
+          "type": "logo"
+        },
+        {
+          "type": "text-content"
+        },
+        {
+          "type": "menu"
+        },
+        {
+          "type": "email"
+        },
+        {
+          "type": "map"
+        }
+      ]
+    }
+}
+{% endschema %}

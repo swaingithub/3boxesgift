@@ -1,0 +1,121 @@
+.collection-1-content{
+    position: relative;
+    margin: 0 10px;
+}
+.collection-1{
+    text-align: center;
+    
+    /* margin-bottom: 70px; */
+}
+.collection-1 .container{
+    border-radius: 10px;
+    background:unset;
+    padding-bottom: 30px;
+}
+.collection-1-row{
+    margin: 0 -10px;
+}
+
+.collection-content{
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+    background-color: transparent;
+    
+}
+.collection-content img{
+    transition: all .3s ease;
+}
+.collection-content:hover img{
+    transform: scale(1.03);
+}
+.title-collection-1{
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    bottom: 15px;
+    left: 30px;
+    font-size: 18px;
+    line-height: 22px;
+    font-weight: 500;
+    text-transform: capitalize;
+    color: #000;
+}
+.title-collection-1:hover{
+    color: var(--color-menu_text_hover);
+}
+.link-collection-1 .collection-image-hover{
+    border: 1px solid transparent;
+    transition: all 0.5s ease-in-out;
+}
+
+.link-collection-1:hover .collection-image-hover {
+    border: 1px solid #000;
+}
+
+.collection-image-hover{
+    position: relative;
+}
+
+.collection-image-hover img{
+    transition: all 0.5s ease-in-out;
+}
+.collection-image-hover:hover img{
+    transform: scale(1.1);
+}
+
+.collection-1 .image-collection__media--placeholder{
+    max-height: 297px;
+    width: 100%;
+}
+.collection-1 .section-header{
+    font-family:"Sacramento";
+    font-size: 60px;
+    display: inline-block;
+    border-bottom: 3px dotted #d5dbe6;
+    margin: 50px auto;
+}
+    .collection-1 .collection-item{
+        padding: 0px;
+        margin-bottom: 16px;
+    }
+.collection-1 .collection-1-content .text-top{
+    position: absolute;
+    bottom: 50%;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    display: inline-block;
+}
+.collection-1 .collection-1-content .text-top span{
+    display: block;
+    
+}
+.collection-1 .collection-1-content .title-collection-1 .count{
+    color: #a9b1c0;
+    font-weight: 600;
+    font-size: 14px;
+    display: block;
+    margin-top: 8px;
+}
+@media (min-width:768px) and (max-width:992px) {
+    .collection-1 .title-block{
+        margin-top: 0px;
+    }
+}
+@media (min-width:768px) {
+    .collection-1{
+        margin-top: 30px;
+    }
+}
+@media (max-width:576px) {
+    .collection-1 .container{
+        padding-bottom: 0px;
+    }
+}
+/* home 4 */
+/* .collection-content{
+    border-radius: 15px;
+} */

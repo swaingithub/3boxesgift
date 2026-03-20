@@ -1,0 +1,119 @@
+.flex{
+  display: flex;
+  align-items: center;
+}
+
+span > .money {
+  font-weight: bold;
+  color: black;
+}
+.card__labal {
+  display: none;
+}
+.js-btn-compare,
+.js-btn-wishlist {
+  display: none;
+}
+
+span > .money {
+  font-weight: bold;
+  color: black;
+}
+.card__labal {
+  display: none;
+}
+.js-btn-compare,
+.js-btn-wishlist {
+  display: none;
+}
+
+span > .money {
+  font-weight: bold;
+  color: black;
+}
+/* For larger screens (lg, xl) */
+@media (min-width: 992px) {
+    .center-logo {
+        position:relative;
+      left:30%;
+       
+    }
+}
+
+/* For smaller screens (xs, sm, md) */
+@media (max-width:567px) {
+    .center-logo {
+ width:180px;
+     position:relative;
+      left:25%;
+    }
+}
+.header-4-center .text::before{
+          position: absolute;
+    content: "" !important;
+    border-right: 0px solid #b7c1d4 !important ;
+    right: 40px;
+    height: 30px;
+    top: 12px;
+}
+.top-icons{
+  width:70%;
+  /* border:2px solid red; */
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  flex-wrap:wrap;
+}
+.child-icon1{
+  /* border:2px solid blue; */
+  order:3;
+}
+.child-icon2{
+position:relative;
+  left:140%;
+margin:auto;
+}
+
+/* Luxurious Header Styles */
+.luxurious-header {
+  background-color: #ffffff;    
+  border-bottom: 3px solid #E5D3B3 !important; /* Gold/Elegant border */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
+}
+
+.luxurious-header .header-megamenu > .nav-bar > .site-nav > .site-nav__item > a {
+  font-family: 'Playfair Display', 'Cormorant Garamond', 'Georgia', serif !important;
+  font-size: 16px !important;
+  color: #333333 !important;
+  letter-spacing: 1.5px;
+  text-transform: uppercase !important;
+  transition: all 0.3s ease;
+}
+
+.luxurious-header .header-megamenu > .nav-bar > .site-nav > .site-nav__item > a:hover {
+  color: #C5A059 !important; /* Luxurious Gold Hover */
+  background-color: transparent !important;
+}
+
+.luxurious-announcement-bar {
+  background: linear-gradient(90deg, #111111 0%, #2a2a2a 50%, #111111 100%) !important;
+}
+
+.luxurious-announcement-text {
+  color: #D4AF37 !important; /* Gold text */
+  margin: 0;
+  font-family: 'Playfair Display', 'Cormorant Garamond', 'Georgia', serif;
+  font-size: 14px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+/* Icons touch-up for luxurious feel */
+.luxurious-header .top-icons svg {
+  color: #333333;
+  transition: color 0.3s ease;
+}
+
+.luxurious-header .top-icons svg:hover {
+  color: #D4AF37;
+}

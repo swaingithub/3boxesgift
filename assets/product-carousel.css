@@ -1,0 +1,103 @@
+.product-carousel{
+    width: 100%;
+    text-align: center;
+    width: 100%;
+    display: inline-block;
+    margin-top: 15px;
+    border-radius: 10px;
+}
+.product-carousel .container{
+    border-radius: 10px;
+}
+.items-product{
+    padding: 1rem;
+}
+.product-carousel-slick{
+    margin: 0 -15px
+}
+.product-carousel .product-items{
+    margin: 0 1.5rem;
+}
+.product-carousel .card-wrapper .card-information .card-information__text{
+    color: #000;
+    font-weight: 400;
+    font-size: 14px;
+    line-height:20px;
+    text-transform:uppercase;
+    letter-spacing: .2em;
+    padding-top: 5px;
+    padding-right: 0px;
+}
+
+/* countdown */
+.product-carousel .js-countdown--countdown--3{
+    width: max-content;
+    margin: auto;
+}
+.product-carousel .js-countdown--countdown--3 div{
+    border: 1px solid #a9b1c0;
+    border-radius: 10px;
+    padding: 10px 0px;
+    text-align: center; 
+    justify-content: center;
+    align-items: center;
+}
+.product-carousel .js-countdown--countdown--3 .label-time{
+    font-size: 20px;
+    font-weight: 600;
+    margin: 0px;
+    padding: 0px;
+}
+.product-carousel .js-countdown--countdown--3 .label{
+    display: none;
+}
+.product-carousel .js-countdown--countdown--3 .label-dots{
+    padding: 0px 5px !important;
+    font-size: 30px;
+}
+@media(max-width: 450px){
+    .items-product{
+        padding: 0;
+    }   
+}
+/* rating */
+.product-carousel .rating {
+    display: inline-block;
+    margin: 0;
+}
+.product-carousel .rating-count{
+    display: none;
+}
+/* countdown */
+.product-carousel .js-countdown.js-countdown--countdown--1{
+    justify-content: center;
+    align-items: center;
+    width: max-content;
+    margin: auto;
+    padding: 10px 25px;
+    background-color: #fed2cc;
+    border-radius: 50px;
+    margin-bottom: 20px;
+}
+.product-carousel .js-countdown.js-countdown--countdown--1 >div{
+    background: unset;
+    display: flex;
+    min-width: unset;
+    flex-direction: row;
+    align-items:flex-end;
+    color: var(--color-menu_text_hover);
+}
+.product-carousel .js-countdown.js-countdown--countdown--1 div .label-time{
+    font-size: 20px;
+    font-weight: bold;
+    line-height: 0.8;
+}
+.product-carousel .js-countdown.js-countdown--countdown--1 div .label{
+    font-size: 12px;
+    line-height: 1;
+    font-weight: bold;
+    margin-left: 1px;
+}
+.product-carousel .js-countdown.js-countdown--countdown--1 .label-dots{
+    display: block;
+}

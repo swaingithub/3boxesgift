@@ -1,0 +1,21 @@
+{{ 'left-column.css' | asset_url | stylesheet_tag }}
+
+<div class="left-column">
+    <!-- home 1 -->
+
+    {% render 'vertical-menu' %}
+    {% section 'service' %}
+    {% section 'banner-cart' %}
+    <div class="blog-1">
+        {% section 'blog-post' %}
+    </div>
+    {% section 'wrapper' %} 
+    
+    <!-- home 3 -->
+    {% comment%}
+    {% render 'vertical-menu' %}
+    {% section 'product-carousel' %}
+    {% section 'collection-1' %}
+    {% section 'wrapper' %}
+    {% endcomment%}
+</div>

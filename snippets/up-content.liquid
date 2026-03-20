@@ -1,0 +1,12 @@
+{{ 'up-content.css' | asset_url | stylesheet_tag }}
+<div class="up-content">
+    {%- comment -%}
+    <!-- Home 3 -->
+        {% section "slide-show" %}
+        {% section "service" %}
+    {%- endcomment -%}
+    <!-- Home 4 -->
+    {% section "slide-show" %}
+    {% section "collection-1" %}
+    {% section "product-tab" %}
+</div>

@@ -1,0 +1,120 @@
+.service{
+    
+    text-align: center;
+}
+.service-content{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+.service-content.icon-top{
+    flex-wrap: wrap;
+    text-align: center;
+}
+.service-content.icon-left{
+    flex-wrap: nowrap;
+    align-items: center;
+}
+.list-icon{
+    padding: 4rem 2rem;
+    position: relative;
+    border-bottom: 2px dotted #d5dbe6;
+}
+.list-icon::before{
+    position: absolute;
+    content: "";
+    height: 170px;
+    right: 0;
+    border-right: 3px dotted #d5dbe6;
+}
+.service-icon{
+    width: 100%;
+    max-width: 90px;
+    position: relative;
+    text-align: center;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+}
+
+
+.service-icon i{
+    font-size: 4.8rem;
+    color: #333;
+    display: block;
+    margin: auto;
+    text-align: center;
+    font-family: "Font Awesome 5 Pro";
+    font-weight: 300;
+}
+.service-content.icon-top .service-icon i{
+    margin-bottom: 3.5rem;
+}
+.service-icon .leofal{
+    -webkit-font-smoothing: antialiased;
+    font-style: normal;
+    font-variant: normal;
+    text-rendering: auto;
+    line-height: 1;
+}
+.service-icon .leofa-user-shield:before {
+    content: "\f505";
+}
+.service-icon .leofa-shipping-timed:before {
+    content: "\f48c";
+}
+.service-icon .leofa-map-marked-alt:before {
+    content: "\f5a0";
+}
+.service-icon .leofa-person-carry:before {
+    content: "\f4cf";
+}
+/* .service-content.icon-top .service-icon svg, .service-content.icon-top .service-icon img{
+    margin-bottom: 3.5rem;
+} */
+.service-icon svg{
+    color: #333;
+    width: 4.8rem;
+    height: 4.8rem;
+}
+
+.service-content .service-title{
+    /* line-height: 2.8rem; */
+    margin-bottom: 20px;
+    font-weight: 600;
+    font-size: 17px;
+    color: #000;
+    padding-top: 15px;
+}
+.service-content .service-text{
+    color: #a9b1c0;
+    font-weight: 600;
+    font-size: 18px;
+}
+.service-decoration{
+    padding-left: 10px;   
+}
+.service .row .list-icon:last-child::before{
+    display: none;
+}
+@media (max-width:992px) {
+    .list-icon::before{
+        display: none;
+    }
+    .list-icon{
+        border: none;
+    }
+}
+@media(max-width: 767px){
+    .service-content.icon-top{
+        flex-direction: column;
+        justify-content: center;
+    }
+    .service-icon{
+        margin: 0 auto;
+    }
+
+    .list-icon{
+        padding: 1rem 1.5rem;
+    }
+}

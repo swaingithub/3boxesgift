@@ -1,0 +1,544 @@
+{{ 'blog-newslester.css' | asset_url | stylesheet_tag }}
+
+<div class="blog-newslester">
+    <div class="{%- if section.settings.fullwidth -%}container-fluid{%- else -%}container{%- endif -%}">
+        <h2 class="section-header">{{ section.settings.heading | escape }}</h2>
+        <p class="section-text">{{ section.settings.text_decoration }}</p>
+
+        <div class="row">
+          {%- for block in section.blocks -%}
+            {%- case block.settings.width -%}
+            {%- when '25%' -%}
+            {%- assign block_width = 'col-12 col-sm-12 col-md-3 Ap_clumBlog' -%}
+            {%- when '33%' -%}
+            {%- assign block_width = 'col-xl-4 col-lg-5 col-md-5' -%}
+            {%- when '50%' -%}
+            {%- assign block_width = 'col-lg-6' -%}
+            {%- when '66%' -%}
+            {%- assign block_width = 'col-xl-8 col-lg-7 col-md-7' -%}
+            {%- when '75%' -%}
+            {%- assign block_width = 'col-12 col-sm-12 col-md-9 Ap_clumBlog' -%}
+            {%- when '100%' -%}
+            {%- assign block_width = 'col-12' -%}
+            {%- endcase -%}
+            <div class="{{block_width}}">
+              {%- case block.type -%}
+           
+              {%- when 'blog' -%}
+              <h3 class="blog_title" ><span>{{ block.settings.title }}</span></h3>
+              <div class="blog-list blog-slick apslick"
+              data-setting='{"accessibility": false, "arrows": {{ block.settings.arrows }},
+              "dots": {{ block.settings.dots }}, "draggable": {{ block.settings.draggable }},
+              "infinite": {{ block.settings.infinite }}, "autoplay": {{ block.settings.autoplay }},
+              "autoplaySpeed": {{ block.settings.autoplaySpeed }}, "speed": {{ block.settings.speed }},
+              "slidesToShow": {{ block.settings.slidesToShow }}, "slidesToScroll": {{ block.settings.slidesToScroll }},
+              "vertical": false, "mobileFirst": false, "pauseOnHover": {{ block.settings.pauseOnHover }},
+              "rows": {{ block.settings.rows }}, "slidesPerRow": 1, "rtl": 1,
+              "slidesToShow_992": {{ block.settings.slidesToShow_992 }}, "slidesToScroll_992": {{ block.settings.slidesToScroll_992 }},
+              "arrows_992": {{ block.settings.arrows_992 }}, "dots_992": {{ block.settings.dots_992 }},
+              "slidesToShow_767": {{ block.settings.slidesToShow_767 }}, "slidesToScroll_767": {{ block.settings.slidesToScroll_767 }},
+              "arrows_767": {{ block.settings.arrows_767 }}, "dots_767": {{ block.settings.dots_767 }},
+              "slidesToShow_450": {{ block.settings.slidesToShow_450 }}, "slidesToScroll_450": {{ block.settings.slidesToScroll_450 }},
+              "arrows_450": {{ block.settings.arrows_450 }}, "dots_450": {{ block.settings.dots_450 }}}'>
+              {%- for article in block.settings.blog.articles -%}
+              <div class="blog-items blog-layout-items-3">
+                  <a class="blog-link d-none" href="{{ article.url }}">
+                  <div class="article-card__image media"
+                      style="padding-bottom: {{ 1 | divided_by: article.image.aspect_ratio | times: 100 }}%;"
+                      >
+                      <img
+                          srcset="{%- if article.image.src.width >= 165 -%}{{ article.image.src | img_url: '165x' }} 165w,{%- endif -%}
+                          {%- if article.image.src.width >= 360 -%}{{ article.image.src | img_url: '360x' }} 360w,{%- endif -%}
+                          {%- if article.image.src.width >= 533 -%}{{ article.image.src | img_url: '533x' }} 533w,{%- endif -%}
+                          {%- if article.image.src.width >= 720 -%}{{ article.image.src | img_url: '720x' }} 720w,{%- endif -%}
+                          {%- if article.image.src.width >= 1000 -%}{{ article.image.src | img_url: '1000x' }} 1000w,{%- endif -%}
+                          {%- if article.image.src.width >= 1500 -%}{{ article.image.src | img_url: '1500x' }} 1500w,{%- endif -%}"
+                          src="{{ article.image.src | img_url: 'master' }}"
+                          sizes="(min-width: {{ settings.page_width }}px) {{ settings.page_width | minus: 100 | divided_by: 2 }}px, (min-width: 750px) calc((100vw - 130px) / 2), calc((100vw - 50px) / 2)"
+                          alt="{{ article.image.src.alt | escape }}"
+                          width="{{ article.image.width }}"
+                          height="{{ article.image.height }}"
+                          loading="lazy"
+                          class="motion-reduce"
+                      >
+                      </div>
+                  </a>
+  
+                  
+                  <div class="blog-content">
+                      <div class="blog-content-top">
+                          {%- if block.settings.show_date -%}
+                              <p class="blog-date">
+                              {{- article.published_at | time_tag: "%d %B" -}}
+                              </p>
+                          {%- endif -%}
+                          {%- if block.settings.show_author -%}
+                              <p class="blog-author">{{ article.author -}}</p>
+                          {%- endif -%}
+                          {%- if block.settings.tags_blog -%}
+                              <p class="blog__meta">
+                                  {%- if article.tags.size > 0 -%}
+                                  {%- for tag in article.tags limit: 2 -%}
+                                  <a href="{{ article.url }}" class="link-body-color"><strong>{{ tag }}</strong></a>{% unless forloop.last %}, {% endunless %}
+                                  {%- endfor -%}
+                                  {%- endif -%}
+                              </p>
+                          {%- endif -%}
+                      </div>
+                      <h2 class="blog-title">
+                          <a class="blog-link" href="{{ article.url }}">
+                          {{ article.title | escape }}
+                          </a>
+                      </h2>
+                      {%- if block.settings.show_description -%}
+                      <div class="wp_p">
+                        <p class="blog-description">
+                        {%- if article.excerpt.size > 0 -%}
+                            {{ article.excerpt | strip_html | truncatewords: 20 }}
+                        {%- else -%}
+                            {{ article.content | strip_html | truncatewords: 20 }}
+                        {%- endif -%}
+                        </p>
+                      </div>
+                      {%- endif -%}
+                      {%- if block.settings.show_link -%}
+                          <a class="blog-link button-link" href="{{ article.url }}">{{ block.settings.text_link }}</a>
+                      {%- endif -%}
+                  </div>
+                  
+              </div>
+              {%- endfor -%}
+              {%- if block.settings.blog == blank -%}
+              {%- for i in (1..6) -%}
+              <div class="blog-items">
+                  {{ 'image' | placeholder_svg_tag: 'placeholder-svg' }}
+              </div>
+              {%- endfor -%}
+              {%- endif -%}
+              </div>
+
+              {%- when 'newslester_blog'-%}
+                <div class="page-width">
+                  <div class="section-block section-block--padding">
+                    <div class="{% if block.settings.heading != blank or block.settings.subheading != blank %}section-block__header {% endif %}text-center">
+                      {%- unless block.settings.heading == blank -%}
+                        <h4 class="h1--mini section-block__title">{{ block.settings.heading | escape }}</h4>
+                      {%- endunless -%}
+                      {%- unless block.settings.subheading == blank -%}
+                        <div class="section-block__subtext">{{ block.settings.subheading }}</div>
+                      {%- endunless -%}
+                    </div>
+                    <div class="grid">
+                      <div class="grid__item medium-up--two-thirds medium-up--push-one-sixth">
+                        <div class="form-vertical">
+                          {% render 'newlester' %}
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+              {%- endcase -%}
+
+            </div>
+          {%- endfor -%}
+        </div>
+    </div>
+</div>
+
+{% schema %}
+{
+  "name": "t:sections.blog-newslester.name",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "fullwidth",
+      "label": "t:sections.blog-newslester.settings.fullwidth.label",
+      "default": false
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "t:sections.blog-newslester.settings.heading.label",
+      "default": "Multimedia blog-newslester"
+    },
+    {
+      "type": "text",
+      "id": "text_decoration",
+      "label": "t:sections.blog-newslester.settings.text_decoration.label"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "blog",
+      "name": "t:sections.blog-newslester.blocks.blog.name",
+      "settings": [
+        {
+          "type": "select",
+          "id": "width",
+          "label": "t:sections.blog-newslester.blocks.blog.settings.width.label",
+          "default": "66%",
+          "options": [
+            {
+              "value": "25%",
+              "label": "t:sections.blog-newslester.blocks.blog.settings.width.options__1.label"
+            },
+            {
+              "value": "33%",
+              "label": "t:sections.blog-newslester.blocks.blog.settings.width.options__2.label"
+            },
+            {
+              "value": "50%",
+              "label": "t:sections.blog-newslester.blocks.blog.settings.width.options__3.label"
+            },
+            {
+              "value": "66%",
+              "label": "t:sections.blog-newslester.blocks.blog.settings.width.options__4.label"
+            },
+            {
+              "value": "75%",
+              "label": "t:sections.blog-newslester.blocks.blog.settings.width.options__5.label"
+            },
+            {
+              "value": "100%",
+              "label": "t:sections.blog-newslester.blocks.blog.settings.width.options__6.label"
+            }
+          ]
+        },  
+        {
+          "id": "title",
+          "type": "text",
+          "label": "t:sections.blog-newslester.blocks.blog.settings.title.label"
+        },
+        {
+          "id": "background-color",
+          "type": "color",
+          "label": "t:sections.blog-newslester.blocks.blog.settings.background-color.label"
+        },
+        {
+          "type": "text",
+          "id": "margin_desktop",
+          "label": "t:sections.blog-newslester.blocks.blog.settings.margin_desktop.label",
+          "info": "t:sections.blog-newslester.blocks.blog.settings.margin_desktop.info"
+        },
+        {
+          "type": "text",
+          "id": "padding_desktop",
+          "label": "t:sections.blog-newslester.blocks.blog.settings.padding_desktop.label",
+          "info": "t:sections.blog-newslester.blocks.blog.settings.padding_desktop.info"
+        },
+        {
+          "type": "text",
+          "id": "margin_mobile",
+          "label": "t:sections.blog-newslester.blocks.blog.settings.margin_mobile.label",
+          "info": "t:sections.blog-newslester.blocks.blog.settings.margin_mobile.info"
+        },
+        {
+          "type": "text",
+          "id": "padding_mobile",
+          "label": "t:sections.blog-newslester.blocks.blog.settings.padding_mobile.label",
+          "info": "t:sections.blog-newslester.blocks.blog.settings.padding_mobile.info"
+        },
+        {
+          "type": "blog",
+          "id": "blog",
+          "label": "t:sections.blog-newslester.blocks.blog.settings.blog.label"
+        },
+        {
+          "type": "checkbox",
+          "id": "show_view_all",
+          "label": "t:sections.blog-newslester.blocks.blog.settings.show_view_all.label",
+          "default": true
+        },
+        {
+            "type": "checkbox",
+            "id": "show_date",
+            "label": "t:sections.blog-newslester.blocks.blog.settings.show_date.label",
+            "default": true
+          },
+          {
+            "type": "checkbox",
+            "id": "show_author",
+            "label": "t:sections.blog-newslester.blocks.blog.settings.show_author.label",
+            "default": true
+          },
+          {
+            "type": "checkbox",
+            "id": "show_description",
+            "label": "t:sections.blog-newslester.blocks.blog.settings.show_description.label",
+            "default": true
+          },
+          {
+            "type": "checkbox",
+            "id": "tags_blog",
+            "label": "t:sections.blog-newslester.blocks.blog.settings.tags_blog.label",
+            "default": true
+          },
+          {
+            "type": "checkbox",
+            "id": "show_link",
+            "label": "t:sections.blog-newslester.blocks.blog.settings.show_link.label",
+            "default": false
+          },
+          {
+            "type": "text",
+            "id": "text_link",
+            "label": "t:sections.blog-newslester.blocks.blog.settings.text_link.label",
+            "default": "Read More"
+          },
+          {
+            "type": "range",
+            "id": "slidesToShow",
+            "min": 1,
+            "max": 10,
+            "step": 1,
+            "label": "t:sections.blog-newslester.blocks.blog.settings.slidesToShow.label",
+            "default": 3
+          },
+          {
+            "type": "range",
+            "id": "slidesToScroll",
+            "min": 1,
+            "max": 10,
+            "step": 1,
+            "label": "t:sections.blog-newslester.blocks.blog.settings.slidesToScroll.label",
+            "default": 1
+          },
+          {
+            "type": "range",
+            "id": "rows",
+            "min": 1,
+            "max": 4,
+            "step": 1,
+            "label": "t:sections.blog-newslester.blocks.blog.settings.rows.label",
+            "default": 1
+          },
+          {
+            "type": "checkbox",
+            "id": "autoplay",
+            "label": "t:sections.blog-newslester.blocks.blog.settings.autoplay.label",
+            "default": false
+          },
+          {
+            "type": "range",
+            "id": "autoplaySpeed",
+            "min": 1000,
+            "max": 5000,
+            "step": 1000,
+            "label": "t:sections.blog-newslester.blocks.blog.settings.autoplaySpeed.label",
+            "default": 2000
+          },
+          {
+            "type": "range",
+            "id": "speed",
+            "min": 300,
+            "max": 1000,
+            "step": 100,
+            "label": "t:sections.blog-newslester.blocks.blog.settings.speed.label",
+            "default": 500
+          },
+          {
+            "type": "checkbox",
+            "id": "pauseOnHover",
+            "label": "t:sections.blog-newslester.blocks.blog.settings.pauseOnHover.label",
+            "default": false
+          },
+          {
+            "type": "checkbox",
+            "id": "arrows",
+            "label": "t:sections.blog-newslester.blocks.blog.settings.arrows.label",
+            "default": true
+          },
+          {
+            "type": "checkbox",
+            "id": "dots",
+            "label": "t:sections.blog-newslester.blocks.blog.settings.dots.label",
+            "default": false
+          },
+          {
+            "type": "checkbox",
+            "id": "draggable",
+            "label": "t:sections.blog-newslester.blocks.blog.settings.draggable.label",
+            "default": true
+          },
+          {
+            "type": "checkbox",
+            "id": "infinite",
+            "label": "t:sections.blog-newslester.blocks.blog.settings.infinite.label",
+            "default": true
+          },
+          {
+            "type": "header",
+            "content": "t:sections.blog-newslester.blocks.blog.settings.header.content"
+          },
+          {
+            "type": "range",
+            "id": "slidesToShow_992",
+            "min": 1,
+            "max": 10,
+            "step": 1,
+            "label": "t:sections.blog-newslester.blocks.blog.settings.slidesToShow_992.label",
+            "default": 3
+          },
+          {
+            "type": "range",
+            "id": "slidesToScroll_992",
+            "min": 1,
+            "max": 10,
+            "step": 1,
+            "label": "t:sections.blog-newslester.blocks.blog.settings.slidesToScroll_992.label",
+            "default": 3
+          },
+          {
+            "type": "checkbox",
+            "id": "arrows_992",
+            "label": "t:sections.blog-newslester.blocks.blog.settings.arrows_992.label",
+            "default": false
+          },
+          {
+            "type": "checkbox",
+            "id": "dots_992",
+            "label": "t:sections.blog-newslester.blocks.blog.settings.dots_992.label",
+            "default": false
+          },
+          {
+            "type": "header",
+            "content": "t:sections.blog-newslester.blocks.blog.settings.header_1.content"
+          },
+          {
+            "type": "range",
+            "id": "slidesToShow_767",
+            "min": 1,
+            "max": 10,
+            "step": 1,
+            "label": "t:sections.blog-newslester.blocks.blog.settings.slidesToShow_767.label",
+            "default": 3
+          },
+          {
+            "type": "range",
+            "id": "slidesToScroll_767",
+            "min": 1,
+            "max": 10,
+            "step": 1,
+            "label": "t:sections.blog-newslester.blocks.blog.settings.slidesToScroll_767.label",
+            "default": 3
+          },
+          {
+            "type": "checkbox",
+            "id": "arrows_767",
+            "label": "t:sections.blog-newslester.blocks.blog.settings.arrows_767.label",
+            "default": false
+          },
+          {
+            "type": "checkbox",
+            "id": "dots_767",
+            "label": "t:sections.blog-newslester.blocks.blog.settings.dots_767.label",
+            "default": false
+          },
+          {
+            "type": "header",
+            "content": "t:sections.blog-newslester.blocks.blog.settings.header_2.content"
+          },
+          {
+            "type": "range",
+            "id": "slidesToShow_450",
+            "min": 1,
+            "max": 10,
+            "step": 1,
+            "label": "t:sections.blog-newslester.blocks.blog.settings.slidesToShow_450.label",
+            "default": 1
+          },
+          {
+            "type": "range",
+            "id": "slidesToScroll_450",
+            "min": 1,
+            "max": 10,
+            "step": 1,
+            "label": "t:sections.blog-newslester.blocks.blog.settings.slidesToScroll_450.label",
+            "default": 1
+          },
+          {
+            "type": "checkbox",
+            "id": "arrows_450",
+            "label": "t:sections.blog-newslester.blocks.blog.settings.arrows_450.label",
+            "default": false
+          },
+          {
+            "type": "checkbox",
+            "id": "dots_450",
+            "label": "t:sections.blog-newslester.blocks.blog.settings.dots_450.label",
+            "default": false
+          }
+      ]
+    },
+    {
+      "type": "newslester_blog",
+      "name": "t:sections.blog-newslester.blocks.newslester_blog.name",
+      "settings": [
+        {
+          "type": "select",
+          "id": "width",
+          "label": "t:sections.blog-newslester.blocks.newslester_blog.settings.width.label",
+          "default": "66%",
+          "options": [
+            {
+              "value": "25%",
+              "label": "t:sections.blog-newslester.blocks.newslester_blog.settings.width.options__1.label"
+            },
+            {
+              "value": "33%",
+              "label": "t:sections.blog-newslester.blocks.newslester_blog.settings.width.options__2.label"
+            },
+            {
+              "value": "50%",
+              "label": "t:sections.blog-newslester.blocks.newslester_blog.settings.width.options__3.label"
+            },
+            {
+              "value": "66%",
+              "label": "t:sections.blog-newslester.blocks.newslester_blog.settings.width.options__4.label"
+            },
+            {
+              "value": "75%",
+              "label": "t:sections.blog-newslester.blocks.newslester_blog.settings.width.options__5.label"
+            },
+            {
+              "value": "100%",
+              "label": "t:sections.blog-newslester.blocks.newslester_blog.settings.width.options__6.label"
+            } 
+          ]
+        }, 
+        {
+          "type": "text",
+          "id": "heading",
+          "label": "Heading",
+          "default": "Subscribe to our newsletter"
+        },
+        {
+          "type": "richtext",
+          "id": "subheading",
+          "label": "Subheading",
+          "default": "<p>Promotions, new products and sales. Directly to your inbox.</p>"
+        },
+        {
+          "type": "paragraph",
+          "content": "Any customers who sign up will have an account created for them in Shopify. [View customers](/admin/customers?query=&accepts_marketing=1)"
+        } 
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "t:sections.blog-newslester.presets.name",
+      "blocks": [
+        {
+          "type": "blog"
+        },
+        {
+           "type": "newslester_blog"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
