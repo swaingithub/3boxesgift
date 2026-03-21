@@ -16,35 +16,40 @@
     margin: 0 -10px;
 }
 
-.collection-content{
+.collection-content {
     position: relative;
     overflow: hidden;
     display: flex;
     justify-content: center;
     margin-bottom: 30px;
     background-color: transparent;
-    
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
 }
-.collection-content img{
-    transition: all .3s ease;
+.collection-content img {
+    transition: transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
-.collection-content:hover img{
-    transform: scale(1.03);
+.collection-content:hover img {
+    transform: scale(1.08);
 }
-.title-collection-1{
+.title-collection-1 {
     display: flex;
     flex-direction: column;
     align-self: center;
     bottom: 15px;
     left: 30px;
-    font-size: 18px;
-    line-height: 22px;
+    font-size: 22px;
+    line-height: 1.4;
     font-weight: 500;
+    font-family: 'Playfair Display', serif;
     text-transform: capitalize;
-    color: #000;
+    color: #2c3e50;
+    letter-spacing: 0.5px;
+    margin-top: 15px;
+    transition: color 0.3s ease;
 }
-.title-collection-1:hover{
-    color: var(--color-menu_text_hover);
+.title-collection-1:hover {
+    color: #be7374;
 }
 .link-collection-1 .collection-image-hover{
     border: 1px solid transparent;
@@ -70,12 +75,24 @@
     max-height: 297px;
     width: 100%;
 }
-.collection-1 .section-header{
-    font-family:"Sacramento";
-    font-size: 60px;
+.collection-1 .section-header {
+    font-family: 'Playfair Display', serif;
+    font-size: 42px;
+    font-weight: 500;
+    color: #2c3e50;
+    letter-spacing: 1px;
+    margin: 50px auto 40px auto;
+    position: relative;
     display: inline-block;
-    border-bottom: 3px dotted #d5dbe6;
-    margin: 50px auto;
+    border-bottom: none;
+}
+.collection-1 .section-header::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 2px;
+    background: #be7374;
+    margin: 15px auto 0;
 }
     .collection-1 .collection-item{
         padding: 0px;

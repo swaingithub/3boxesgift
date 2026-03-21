@@ -1,25 +1,13 @@
+
 {
   "sections": {
     "16419587336c804081": {
       "type": "slide-show",
       "blocks": {
-        "31fd2dc2-f923-482b-8ecb-4c5576967ea2": {
-          "type": "slide",
-          "settings": {
-            "sub_title": "",
-            "pd_title": "0px 0px 20px 0px",
-            "title": "",
-            "content": "",
-            "link": "Buy now",
-            "btn_link": "shopify://collections/all",
-            "box-align": "center",
-            "text_align": "center",
-            "item_align": "bottom"
-          }
-        },
         "5a6c7b5c-5b9f-4acf-807f-189d62fc3f72": {
           "type": "slide",
           "settings": {
+            "image_slide": "shopify://shop_images/Black_and_Gold_3D_Illustration_11.11_Sale_Instagram_Post_1520_x_577_px_5_1.png",
             "sub_title": "",
             "pd_title": "0px 0px 20px 0px",
             "title": "",
@@ -31,10 +19,25 @@
             "item_align": "bottom"
           }
         },
+        "31fd2dc2-f923-482b-8ecb-4c5576967ea2": {
+          "type": "slide",
+          "settings": {
+            "image_slide": "shopify://shop_images/Pink_3D_Elegant_Gift_Voucher_A4_Landscape_1520_x_577_px_9_1.png",
+            "sub_title": "",
+            "pd_title": "0px 0px 20px 0px",
+            "title": "",
+            "content": "",
+            "link": "Buy now",
+            "btn_link": "shopify://collections/all",
+            "box-align": "center",
+            "text_align": "center",
+            "item_align": "bottom"
+          }
+        },
         "f85f0ead-67fa-42f2-ae09-0fa6bfc3f4be": {
           "type": "slide",
-          "disabled": true,
           "settings": {
+            "image_slide": "shopify://shop_images/White_And_Gold_Simple_Christmas_Sale_Banner_1520_x_577_px_2_1.png",
             "sub_title": "",
             "pd_title": "0px 0px 20px 0px",
             "title": "",
@@ -49,6 +52,7 @@
         "d2bd055d-ab36-467d-a362-df0c93482a85": {
           "type": "slide",
           "settings": {
+            "image_slide": "shopify://shop_images/10-24_december_1520_x_577_px_5_1.png",
             "sub_title": "",
             "pd_title": "0px 0px 20px 0px",
             "title": "",
@@ -63,6 +67,7 @@
         "fbe4fb80-687b-45f4-8cf8-9deb9163582d": {
           "type": "slide",
           "settings": {
+            "image_slide": "shopify://shop_images/EN_Top-Premium-Corporate-Gifts_Blog-Header_1.jpg",
             "sub_title": "",
             "pd_title": "0px 0px 20px 0px",
             "title": "",
@@ -76,13 +81,13 @@
         },
         "a03a3ada-eb80-4317-8fe0-5169e9da4ea3": {
           "type": "slide",
-          "disabled": true,
           "settings": {
-            "sub_title": "× Special Offers ×",
+            "image_slide": "shopify://shop_images/3boxes_banners_5_1.jpg",
+            "sub_title": "",
             "pd_title": "0px 0px 20px 0px",
-            "title": "Gifts<br><span style=\"font-size:30px;\">That Resound The Spirit Of The Festival.</span>",
-            "content": "<span>#GiftYourFeelings</span>",
-            "link": "Shop now",
+            "title": "",
+            "content": "",
+            "link": "",
             "btn_link": "",
             "box-align": "center",
             "text_align": "center",
@@ -91,13 +96,13 @@
         },
         "16419587335615bfb4-0": {
           "type": "slide",
-          "disabled": true,
           "settings": {
-            "sub_title": "× Special Offers ×",
+            "image_slide": "shopify://shop_images/How_To_Choose_Perfect_Gift_For_Your_Partner_1.jpg",
+            "sub_title": "",
             "pd_title": "0px 0px 20px 0px",
-            "title": "3Boxes Luxury Curations.",
-            "content": "FROM : <span>$2.90</span>",
-            "link": "shop now",
+            "title": "",
+            "content": "",
+            "link": "",
             "btn_link": "",
             "box-align": "center",
             "text_align": "left",
@@ -108,11 +113,12 @@
           "type": "slide",
           "disabled": true,
           "settings": {
-            "sub_title": "Sub-title slider-show",
+            "image_slide": "shopify://shop_images/gifts-for-business-people-1_1.png",
+            "sub_title": "",
             "pd_title": "0px 0px 20px 0px",
-            "title": "Title slider-show",
-            "content": "We are at the end of the ‘50s: an interesting series of armchairs and",
-            "link": "Show More",
+            "title": "",
+            "content": "",
+            "link": "",
             "btn_link": "",
             "box-align": "center",
             "text_align": "center",
@@ -121,8 +127,8 @@
         }
       },
       "block_order": [
-        "31fd2dc2-f923-482b-8ecb-4c5576967ea2",
         "5a6c7b5c-5b9f-4acf-807f-189d62fc3f72",
+        "31fd2dc2-f923-482b-8ecb-4c5576967ea2",
         "f85f0ead-67fa-42f2-ae09-0fa6bfc3f4be",
         "d2bd055d-ab36-467d-a362-df0c93482a85",
         "fbe4fb80-687b-45f4-8cf8-9deb9163582d",
@@ -250,44 +256,48 @@
           "type": "collection",
           "settings": {
             "width": "25%",
-            "collection": "scented-candles",
+            "collection": "candles",
             "title_collection": "bottom",
             "color_text": "",
             "show_border_bottom": false,
-            "pd_bottom": "0"
+            "pd_bottom": "0",
+            "image_collection": "shopify://shop_images/image_QwT2_1.5x.png"
           }
         },
         "1641972176dd254f41-1": {
           "type": "collection",
           "settings": {
             "width": "25%",
-            "collection": "toys",
+            "collection": "frontpage",
             "title_collection": "bottom",
             "color_text": "",
             "show_border_bottom": false,
-            "pd_bottom": "0"
+            "pd_bottom": "0",
+            "image_collection": "shopify://shop_images/toy.png"
           }
         },
         "1641972176dd254f41-2": {
           "type": "collection",
           "settings": {
             "width": "25%",
-            "collection": "gift-boxes",
+            "collection": "candles-copy",
             "title_collection": "bottom",
             "color_text": "",
             "show_border_bottom": false,
-            "pd_bottom": "0"
+            "pd_bottom": "0",
+            "image_collection": "shopify://shop_images/perfumeperfume.png"
           }
         },
         "9e33e996-e254-47dc-94e6-4f5b240b2604": {
           "type": "collection",
           "settings": {
             "width": "25%",
-            "collection": "perfume",
+            "collection": "perfumes-copy",
             "title_collection": "bottom",
             "color_text": "",
             "show_border_bottom": false,
-            "pd_bottom": "0"
+            "pd_bottom": "0",
+            "image_collection": "shopify://shop_images/retry.png"
           }
         }
       },
@@ -316,36 +326,36 @@
         ".js-btn-compare,.js-btn-wishlist {display: none;}"
       ],
       "settings": {
-        "fullwidth": false,
+        "fullwidth": true,
         "background-color": "rgba(0,0,0,0)",
-        "margin_desktop": "",
-        "padding_desktop": "",
-        "margin_mobile": "",
-        "padding_mobile": "",
+        "margin_desktop": "0",
+        "padding_desktop": "10px 0",
+        "margin_mobile": "0",
+        "padding_mobile": "8px 0",
         "heading": "Featured items",
         "text_decoration": "",
-        "collection": "all",
+        "collection": "candles",
         "show_countdown_collection": false,
         "countdown_collection": "2025-12-30T00:00:00",
         "image_ratio": "adapt",
         "slidesToShow": 4,
-        "slidesToScroll": 1,
-        "rows": 2,
-        "autoplay": true,
+        "slidesToScroll": 3,
+        "rows": 1,
+        "autoplay": false,
         "autoplaySpeed": 3000,
         "speed": 500,
-        "pauseOnHover": false,
-        "arrows": false,
-        "dots": false,
+        "pauseOnHover": true,
+        "arrows": true,
+        "dots": true,
         "draggable": true,
-        "infinite": true,
-        "slidesToShow_992": 3,
+        "infinite": false,
+        "slidesToShow_992": 4,
         "slidesToScroll_992": 1,
-        "arrows_992": false,
+        "arrows_992": true,
         "dots_992": false,
         "slidesToShow_767": 2,
         "slidesToScroll_767": 1,
-        "arrows_767": false,
+        "arrows_767": true,
         "dots_767": false,
         "slidesToShow_450": 1,
         "slidesToScroll_450": 1,

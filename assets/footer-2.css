@@ -77,24 +77,31 @@
   font-size: 16px;
 }
 .footer-2 h2{
-  font-size: 16px;
-    text-transform: uppercase;
-    font-weight: 700;
-    margin: 0;
-    padding-bottom: 10px;
+  font-family: 'Playfair Display', serif;
+  font-size: 20px;
+  text-transform: capitalize;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  margin: 0;
+  padding-bottom: 15px;
 }
 .footer-2 .note-footer-content{
-  font-weight: 600;
-    font-size: 18px;
+    font-weight: 500;
+    font-size: 16px;
     text-transform: unset;
+    font-family: 'Playfair Display', serif;
+    color: #ffffff;
 }
 .footer-2 a,.footer-2 .list-content-footer,.footer-2 .email-footer p{
-  font-size: 15px;
-  color: #bdbdbd;
+  font-size: 14px;
+  color: #a7a7a7;
   font-weight: 400;
+  line-height: 1.8;
+  font-family: 'Inter', sans-serif;
+  transition: color 0.3s ease;
 }
 .footer-2 a:hover{
-  color: #f5f5f5;
+  color: #be7374;
 }
 .footer-2 ul{
   margin-bottom: -16px;
@@ -115,7 +122,7 @@
 .footer-2 .bottom-footer::before{
   position: absolute;
   content: "";
-  border-top: 2px dotted #5c5c5c;
+  border-top: 1px solid rgba(255,255,255,0.05);
   top: 0;
   width: 100%;
   margin-left: -1000px;
@@ -123,62 +130,77 @@
   box-sizing: content-box;
 }
 .footer-2 .footer__copyright .copyright_right,.footer-2 .footer__copyright .copyright_right a{
-  font-weight: 600;
-    font-size: 16px;
+    font-weight: 400;
+    font-size: 14px;
     color: #a7a7a7;
+    font-family: 'Inter', sans-serif;
 }
 .footer-2 .footer__copyright .copyright_left{
-  color: #5c5c5c;
-  font-weight: 600;
-    font-size: 16px;
+    color: #a7a7a7;
+    font-weight: 400;
+    font-size: 14px;
+    font-family: 'Inter', sans-serif;
 }
 /* .footer-2 .menu-footer ul,.footer-2 .map-footer ul{
   margin-bottom: 1rem;
 } */
 
-.footer-2 .email-footer .field input{
-  padding: 17px 25px 15px 20px;
-  background-color:white;
-    font-size: 16px;
-    color: #b0afad;
-    border: 2px solid #ebebeb;
+.footer-2 .email-footer .field input {
+    padding: 15px 25px 15px 20px;
+    background-color: rgba(255,255,255,0.05);
+    font-size: 14px;
+    color: #ffffff;
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 6px;
     width: 100%;
-    font-family: "Josefin Slab",serif;
+    font-family: "Inter", sans-serif;
     box-shadow: none;
+    transition: border-color 0.3s ease;
+}
+.footer-2 .email-footer .field input:focus {
+    border-color: #be7374;
 }
 .footer-2 .email-footer .field__input:focus~.field__label{
   display: none;
 }
-.footer-2 .footer-block__newsletter button{
-  padding: 0px;
+.footer-2 .footer-block__newsletter button {
+    padding: 14px 24px;
     min-width: unset;
     min-height: unset;
-    box-shadow: none;
-  font-family:"Montserrat";
+    box-shadow: 0 4px 15px rgba(190, 115, 116, 0.2);
+    font-family: "Inter", sans-serif;
     text-transform: uppercase;
     font-size: 12px;
-    padding: 8px 10px;
     margin: 0px 5px 10px 0px;
-    font-weight: 500;
-    color: white;
-    letter-spacing: 2px;
-    background-color:black;
-    border-radius:5px;
-    /* border-bottom: 2px dashed #fed2cc; */
+    font-weight: 600;
+    color: #ffffff;
+    letter-spacing: 1px;
+    background-color: #be7374;
+    border-radius: 6px;
+    border: none;
+    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
-.footer-2 .button:not([disabled]):hover{
-  box-shadow: none;
-  /* border-bottom: 2px solid #fed2cc; */
-  color: #f5f5f5;
+.footer-2 .footer-block__newsletter button:hover {
+    background-color: #a86263;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(190, 115, 116, 0.3);
+    color: #ffffff;
 }
 .footer-2 .list-social__item {
-  width: 30px;
-  height: 30px;
+  width: 35px;
+  height: 35px;
   border-radius: 50%;
-    background: #3b3b3b;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  background: rgba(255,255,255,0.05);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.4s ease;
+  border: 1px solid rgba(255,255,255,0.1);
+}
+.footer-2 .list-social__item:hover {
+  background: #be7374;
+  border-color: #be7374;
+  transform: translateY(-3px);
 }
 .footer-2 .list-social__item a{
   color: #fff;

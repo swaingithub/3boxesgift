@@ -1,3 +1,4 @@
+
 {
   "current": {
     "colors_solid_button_labels": "#ffffff",
@@ -24,7 +25,7 @@
     "name_font_body_user": "",
     "font_body_user": "",
     "font_body_user_2": "",
-    "enable_rtl": true,
+    "enable_rtl": false,
     "accent_icons": "text",
     "show_bg_body": false,
     "show_up_content": false,

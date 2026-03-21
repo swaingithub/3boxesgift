@@ -18,14 +18,14 @@
 .list-icon{
     padding: 4rem 2rem;
     position: relative;
-    border-bottom: 2px dotted #d5dbe6;
+    border-bottom: 1px solid rgba(0,0,0,0.04);
 }
 .list-icon::before{
     position: absolute;
     content: "";
     height: 170px;
     right: 0;
-    border-right: 3px dotted #d5dbe6;
+    border-right: 1px solid rgba(0,0,0,0.04);
 }
 .service-icon{
     width: 85px;
@@ -35,22 +35,22 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    border: 1px solid #d4af37;
+    border: 1px solid rgba(190, 115, 116, 0.4);
     border-radius: 50%;
-    background-color: #faf9f6;
-    box-shadow: 0 5px 20px rgba(212, 175, 55, 0.12);
-    transition: all 0.4s ease;
+    background-color: #ffffff;
+    box-shadow: 0 5px 20px rgba(190, 115, 116, 0.1);
+    transition: all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 
 .service-icon:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 25px rgba(212, 175, 55, 0.25);
-    background-color: #fff;
+    transform: translateY(-8px);
+    box-shadow: 0 10px 30px rgba(190, 115, 116, 0.2);
+    border-color: #be7374;
 }
 
 .service-icon i{
-    font-size: 4.8rem;
-    color: #d4af37;
+    font-size: 4rem;
+    color: #be7374;
     display: block;
     margin: auto;
     text-align: center;
@@ -83,27 +83,28 @@
     margin-bottom: 3.5rem;
 } */
 .service-icon svg{
-    color: #d4af37;
+    color: #be7374;
     width: 3.5rem;
     height: 3.5rem;
     stroke-width: 1px;
 }
 
 .service-content .service-title{
-    margin-bottom: 15px;
+    margin-bottom: 12px;
     font-weight: 500;
-    font-size: 15px;
-    color: #333;
+    font-size: 18px;
+    color: #2c3e50;
     padding-top: 15px;
-    letter-spacing: 1.5px;
-    text-transform: uppercase;
-    font-family: inherit;
+    letter-spacing: 0.5px;
+    text-transform: capitalize;
+    font-family: 'Playfair Display', serif;
 }
 .service-content .service-text{
     color: #888;
     font-weight: 400;
-    font-size: 15px;
+    font-size: 14px;
     line-height: 1.6;
+    font-family: 'Inter', sans-serif;
 }
 .service-decoration{
     padding-left: 10px;   

@@ -49,39 +49,42 @@
   }
 }
 
-.header-4{
+.header-4 {
     position: relative;
-   box-shadow:0px 1px 50px 5px rgba(0, 0, 0, 0.142);
+    box-shadow: 0px 4px 30px rgba(0, 0, 0, 0.05);
 }
 /* announcement-bar */
-.header-4-announcement-bar{
-    background-color: #fff;
-    color: #333;
+.header-4-announcement-bar {
+    background-color: #ffffff;
+    color: #2c3e50;
     width: 100%;
-    padding: 10px 0;
+    padding: 12px 0;
     text-align: center;
-    border-bottom: 1px solid #ebebeb;
+    border-bottom: 1px solid rgba(0,0,0,0.03);
+    font-family: 'Inter', sans-serif;
 }
 
 .color-transparent .header-4-announcement-bar{
     background-color: transparent;
 }
 
-.header-4-announcement-bar p{
+.header-4-announcement-bar p {
     margin: 0;
+    font-size: 13px;
+    letter-spacing: 0.5px;
 }
-.header-4-announcement-bar .greeting{
+.header-4-announcement-bar .greeting {
     padding-right: 30px;
 }
-.header-4-announcement-bar .greeting p{
-    color: #a9b1c0;
-    font-size: 16px;
+.header-4-announcement-bar .greeting p {
+    color: #888;
+    font-size: 13px;
     margin-bottom: 0;
 }
-.header-4-announcement-bar .pre-currencies{
+.header-4-announcement-bar .pre-currencies {
     text-transform: capitalize;
-    font-weight: 700;
-    font-size: 16px;
+    font-weight: 500;
+    font-size: 13px;
 }
 .header-4-announcement-bar .dropdown-toggle::after{
     display: none;
@@ -150,23 +153,23 @@
     font-weight: 600;
     padding-bottom: 6px;
 }
-.header-4-center .cart p{
-    font-size: 16px;
-    font-weight: 600;
+.header-4-center .cart p {
+    font-size: 14px;
+    font-weight: 500;
     color: #be7374;
+    font-family: 'Inter', sans-serif;
     display: block;
-
-}
-.header-4-center .cart p{
     margin: 0px;
     padding: 0px;
 }
 .header-4-center .cart{
     padding-bottom: 6px;
 }
-.header-4-center .text h3{
-    font-size: 20px;
-    color: #000;
+.header-4-center .text h3 {
+    font-size: 18px;
+    color: #2c3e50;
+    font-family: 'Playfair Display', serif;
+    font-weight: 500;
 }
 .header-4-center .cost{  
     text-align: center;
@@ -353,9 +356,15 @@
 .header-4-bottom .vertical-menu-close{
     display: none;
 }
-.header-4 .header-megamenu >.nav-bar >.site-nav >.site-nav__item:hover >a{
-    background-color:#fed2cc;
-    color: var(--color-menu_text_hover);
+.header-4 .header-megamenu >.nav-bar >.site-nav >.site-nav__item >a {
+    transition: color 0.3s ease;
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+}
+.header-4 .header-megamenu >.nav-bar >.site-nav >.site-nav__item:hover >a {
+    background-color: transparent;
+    color: #be7374;
 }
 .header-4 .widget-inner li:hover a{
     color: var(--color-menu_text_hover);

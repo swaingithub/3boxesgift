@@ -93,7 +93,7 @@
                 "autoplaySpeed": {{ block.settings.autoplaySpeed }}, "speed": {{ block.settings.speed }},
                 "slidesToShow": {{ block.settings.slidesToShow }}, "slidesToScroll": {{ block.settings.slidesToScroll }},
                 "vertical": false, "mobileFirst": false, "pauseOnHover": {{ block.settings.pauseOnHover }},
-                "rows": {{ block.settings.rows }}, "slidesPerRow": 1, "rtl": 1,
+                "rows": {{ block.settings.rows }}, "slidesPerRow": 1, "rtl": {% if settings.enable_rtl %}1{% else %}0{% endif %},
                 "slidesToShow_992": {{ block.settings.slidesToShow_992 }}, "slidesToScroll_992": {{ block.settings.slidesToScroll_992 }},
                 "arrows_992": {{ block.settings.arrows_992 }}, "dots_992": {{ block.settings.dots_992 }},
                 "slidesToShow_767": {{ block.settings.slidesToShow_767 }}, "slidesToScroll_767": {{ block.settings.slidesToScroll_767 }},
