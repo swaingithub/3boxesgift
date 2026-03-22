@@ -1,4 +1,12 @@
-
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "16419587336c804081": {
@@ -171,6 +179,150 @@
         "dots_450": true
       }
     },
+    "16419721766495fa0b": {
+      "type": "collection-1",
+      "blocks": {
+        "1641972176dd254f41-0": {
+          "type": "collection",
+          "settings": {
+            "width": "33%",
+            "collection": "candles",
+            "title_collection": "bottom",
+            "color_text": "",
+            "show_border_bottom": false,
+            "pd_bottom": "0",
+            "image_collection": "shopify://shop_images/image_QwT2_1.5x.png"
+          }
+        },
+        "1641972176dd254f41-2": {
+          "type": "collection",
+          "settings": {
+            "width": "33%",
+            "collection": "candles-copy",
+            "title_collection": "bottom",
+            "color_text": "",
+            "show_border_bottom": false,
+            "pd_bottom": "0",
+            "image_collection": "shopify://shop_images/perfumeperfume.png"
+          }
+        },
+        "collection_CKiwim": {
+          "type": "collection",
+          "settings": {
+            "width": "33%",
+            "collection": "corporate-gifts",
+            "title_collection": "bottom",
+            "color_text": "",
+            "show_border_bottom": false,
+            "pd_bottom": "0",
+            "image_collection": "shopify://shop_images/corporate-gifts.png"
+          }
+        },
+        "collection_VyNWTd": {
+          "type": "collection",
+          "settings": {
+            "width": "33%",
+            "collection": "jewellary",
+            "title_collection": "bottom",
+            "color_text": "",
+            "show_border_bottom": false,
+            "pd_bottom": "0",
+            "image_collection": "shopify://shop_images/jewellary.png"
+          }
+        },
+        "9e33e996-e254-47dc-94e6-4f5b240b2604": {
+          "type": "collection",
+          "settings": {
+            "width": "33%",
+            "collection": "perfumes-copy",
+            "title_collection": "bottom",
+            "color_text": "",
+            "show_border_bottom": false,
+            "pd_bottom": "0",
+            "image_collection": "shopify://shop_images/retry.png"
+          }
+        },
+        "1641972176dd254f41-1": {
+          "type": "collection",
+          "settings": {
+            "width": "33%",
+            "collection": "frontpage",
+            "title_collection": "bottom",
+            "color_text": "",
+            "show_border_bottom": false,
+            "pd_bottom": "0",
+            "image_collection": "shopify://shop_images/toy.png"
+          }
+        }
+      },
+      "block_order": [
+        "1641972176dd254f41-0",
+        "1641972176dd254f41-2",
+        "collection_CKiwim",
+        "collection_VyNWTd",
+        "9e33e996-e254-47dc-94e6-4f5b240b2604",
+        "1641972176dd254f41-1"
+      ],
+      "custom_css": [],
+      "settings": {
+        "fullwidth": false,
+        "background-color": "#ffffff",
+        "margin_desktop": "",
+        "padding_desktop": "",
+        "margin_mobile": "",
+        "padding_mobile": "",
+        "heading": "Gifts & Gift Baskets",
+        "text_decoration": "",
+        "effects_image": false
+      }
+    },
+    "164067613247f5c4c9": {
+      "type": "product-carousel",
+      "custom_css": [
+        ".card__labal {display: none;}",
+        ".js-btn-compare,.js-btn-wishlist {display: none;}"
+      ],
+      "settings": {
+        "fullwidth": true,
+        "background-color": "rgba(0,0,0,0)",
+        "margin_desktop": "0",
+        "padding_desktop": "10px 0",
+        "margin_mobile": "0",
+        "padding_mobile": "8px 0",
+        "heading": "Featured items",
+        "text_decoration": "",
+        "collection": "candles",
+        "show_countdown_collection": false,
+        "countdown_collection": "2025-12-30T00:00:00",
+        "image_ratio": "adapt",
+        "slidesToShow": 4,
+        "slidesToScroll": 3,
+        "rows": 1,
+        "autoplay": false,
+        "autoplaySpeed": 3000,
+        "speed": 500,
+        "pauseOnHover": true,
+        "arrows": true,
+        "dots": false,
+        "draggable": true,
+        "infinite": false,
+        "slidesToShow_992": 4,
+        "slidesToScroll_992": 1,
+        "arrows_992": true,
+        "dots_992": false,
+        "slidesToShow_767": 2,
+        "slidesToScroll_767": 1,
+        "arrows_767": true,
+        "dots_767": false,
+        "slidesToShow_450": 1,
+        "slidesToScroll_450": 1,
+        "arrows_450": false,
+        "dots_450": true,
+        "show_secondary_image": true,
+        "add_image_padding": false,
+        "show_vendor": false
+      }
+    },
     "1642056941a761a745": {
       "type": "service",
       "blocks": {
@@ -247,123 +399,6 @@
         "heading": "",
         "text_decoration": "",
         "icon-align": "top"
-      }
-    },
-    "16419721766495fa0b": {
-      "type": "collection-1",
-      "blocks": {
-        "1641972176dd254f41-0": {
-          "type": "collection",
-          "settings": {
-            "width": "25%",
-            "collection": "candles",
-            "title_collection": "bottom",
-            "color_text": "",
-            "show_border_bottom": false,
-            "pd_bottom": "0",
-            "image_collection": "shopify://shop_images/image_QwT2_1.5x.png"
-          }
-        },
-        "1641972176dd254f41-1": {
-          "type": "collection",
-          "settings": {
-            "width": "25%",
-            "collection": "frontpage",
-            "title_collection": "bottom",
-            "color_text": "",
-            "show_border_bottom": false,
-            "pd_bottom": "0",
-            "image_collection": "shopify://shop_images/toy.png"
-          }
-        },
-        "1641972176dd254f41-2": {
-          "type": "collection",
-          "settings": {
-            "width": "25%",
-            "collection": "candles-copy",
-            "title_collection": "bottom",
-            "color_text": "",
-            "show_border_bottom": false,
-            "pd_bottom": "0",
-            "image_collection": "shopify://shop_images/perfumeperfume.png"
-          }
-        },
-        "9e33e996-e254-47dc-94e6-4f5b240b2604": {
-          "type": "collection",
-          "settings": {
-            "width": "25%",
-            "collection": "perfumes-copy",
-            "title_collection": "bottom",
-            "color_text": "",
-            "show_border_bottom": false,
-            "pd_bottom": "0",
-            "image_collection": "shopify://shop_images/retry.png"
-          }
-        }
-      },
-      "block_order": [
-        "1641972176dd254f41-0",
-        "1641972176dd254f41-1",
-        "1641972176dd254f41-2",
-        "9e33e996-e254-47dc-94e6-4f5b240b2604"
-      ],
-      "settings": {
-        "fullwidth": false,
-        "background-color": "#ffffff",
-        "margin_desktop": "",
-        "padding_desktop": "",
-        "margin_mobile": "",
-        "padding_mobile": "",
-        "heading": "Gifts & Gift Baskets",
-        "text_decoration": "",
-        "effects_image": false
-      }
-    },
-    "164067613247f5c4c9": {
-      "type": "product-carousel",
-      "custom_css": [
-        ".card__labal {display: none;}",
-        ".js-btn-compare,.js-btn-wishlist {display: none;}"
-      ],
-      "settings": {
-        "fullwidth": true,
-        "background-color": "rgba(0,0,0,0)",
-        "margin_desktop": "0",
-        "padding_desktop": "10px 0",
-        "margin_mobile": "0",
-        "padding_mobile": "8px 0",
-        "heading": "Featured items",
-        "text_decoration": "",
-        "collection": "candles",
-        "show_countdown_collection": false,
-        "countdown_collection": "2025-12-30T00:00:00",
-        "image_ratio": "adapt",
-        "slidesToShow": 4,
-        "slidesToScroll": 3,
-        "rows": 1,
-        "autoplay": false,
-        "autoplaySpeed": 3000,
-        "speed": 500,
-        "pauseOnHover": true,
-        "arrows": true,
-        "dots": true,
-        "draggable": true,
-        "infinite": false,
-        "slidesToShow_992": 4,
-        "slidesToScroll_992": 1,
-        "arrows_992": true,
-        "dots_992": false,
-        "slidesToShow_767": 2,
-        "slidesToScroll_767": 1,
-        "arrows_767": true,
-        "dots_767": false,
-        "slidesToShow_450": 1,
-        "slidesToScroll_450": 1,
-        "arrows_450": false,
-        "dots_450": true,
-        "show_secondary_image": true,
-        "add_image_padding": false,
-        "show_vendor": false
       }
     },
     "1640672172a3a903ec": {
@@ -464,7 +499,7 @@
             "text_link": "Read More",
             "slidesToShow": 1,
             "slidesToScroll": 1,
-            "rows": 2,
+            "rows": 1,
             "autoplay": true,
             "autoplaySpeed": 3000,
             "speed": 500,
@@ -563,9 +598,9 @@
   },
   "order": [
     "16419587336c804081",
-    "1642056941a761a745",
     "16419721766495fa0b",
     "164067613247f5c4c9",
+    "1642056941a761a745",
     "1640672172a3a903ec",
     "1642058822a65079b3",
     "1642059798f396a41f"

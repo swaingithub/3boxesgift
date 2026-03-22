@@ -1,15 +1,45 @@
-{%- if block.settings.menu != blank -%}
+{%- if block.settings.menu != blank or settings.main_linklist != blank -%}
     <nav class="footer-menu">
         <ul class="list-verticalmenu" role="list">
-        {%- for link in block.settings.menu.links -%}
-            <li>
-                {%- if link != blank -%}
-                <a href="{{ link.url }}" class="footer-link"{%- if link.current -%} aria-current="page"{%- endif -%}>
-                    <span {%- if link.current -%} class="footer-active-menu"{%- endif -%}>{{ link.title | escape }}</span>
-                </a>
-                {%- endif -%}
-            </li>
-        {%- endfor -%}
+        
+        {%- assign title_down = block.settings.title_menu | downcase -%}
+        
+        {%- if title_down contains 'category' -%}
+            <li><a href="/collections/scented-candles" class="footer-link">Scented Candles</a></li>
+            <li><a href="/collections/jewellary" class="footer-link">Jewellary</a></li>
+            <li><a href="/collections/corporate-gifts" class="footer-link">Corporate Gifts</a></li>
+            <li><a href="/collections/gifts" class="footer-link">Gifts</a></li>
+            <li><a href="/collections/toys" class="footer-link">Toys</a></li>
+        {%- else -%}
+            {%- if block.settings.menu != blank -%}
+              {%- for link in block.settings.menu.links -%}
+                  <li>
+                      {%- if link != blank -%}
+                      <a href="{{ link.url }}" class="footer-link"{%- if link.current -%} aria-current="page"{%- endif -%}>
+                          <span {%- if link.current -%} class="footer-active-menu"{%- endif -%}>{{ link.title | escape }}</span>
+                      </a>
+                      {%- endif -%}
+                  </li>
+              {%- endfor -%}
+            {%- endif -%}
+            
+            {%- if settings.main_linklist != blank -%}
+              {%- for link in linklists[settings.main_linklist].links -%}
+                  {%- assign link_title_down = link.title | downcase -%}
+                  {%- if link_title_down contains 'about' or link_title_down contains 'vendor' or link_title_down contains 'candle' or link_title_down contains 'jewel' or link_title_down contains 'corporate' or link_title_down == 'gifts' or link_title_down contains 'gift' -%}
+                      {%- continue -%}
+                  {%- endif -%}
+                  <li>
+                      {%- if link != blank -%}
+                      <a href="{{ link.url }}" class="footer-link"{%- if link.current -%} aria-current="page"{%- endif -%}>
+                          <span {%- if link.current -%} class="footer-active-menu"{%- endif -%}>{{ link.title | escape }}</span>
+                      </a>
+                      {%- endif -%}
+                  </li>
+              {%- endfor -%}
+            {%- endif -%}
+        {%- endif -%}
+
         </ul>
     </nav>
 {%- endif -%}

@@ -7,7 +7,16 @@
     <button class="button-close" type="button">{%- render 'icon-close' -%}</button>
   </div>
   <ul class="site-nav d-flex">
+    <li class="site-nav__item"><a href="/collections/scented-candles" class="site-nav__link"><span>Scented Candles</span></a></li>
+    <li class="site-nav__item"><a href="/collections/jewellary" class="site-nav__link"><span>Jewellary</span></a></li>
+    <li class="site-nav__item"><a href="/collections/corporate-gifts" class="site-nav__link"><span>Corporate Gifts</span></a></li>
+    <li class="site-nav__item"><a href="/collections/gifts" class="site-nav__link"><span>Gifts</span></a></li>
+    <li class="site-nav__item"><a href="/collections/toys" class="site-nav__link"><span>Toys</span></a></li>
     {%- for link in linklists[settings.main_linklist].links -%}
+      {%- assign link_title_down = link.title | downcase -%}
+      {%- unless link_title_down contains 'about' or link_title_down contains 'vendor' or link_title_down contains 'candle' or link_title_down contains 'jewel' or link_title_down contains 'corporate' or link_title_down == 'gifts' or link_title_down contains 'gift' -%}
+        {%- continue -%}
+      {%- endunless -%}
       {%- assign hasMega = false -%}
       {%- assign titleCheckMega = link.title | escape | split: '[' | first | split: '}' | last | downcase -%}
       {%- for i in (1..4) -%}

@@ -241,7 +241,7 @@ singer image
          align-items: center;
          -ms-flex-align: center;
          padding: 32px 0;
-         border-bottom: 3px dotted #d5dbe6;
+         border-bottom: 2px solid #d4af37;
      }
      .blog-row .blog-items .blog-row-box .media{
          width: 28%;

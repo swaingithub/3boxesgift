@@ -8,7 +8,7 @@
     transform: translate(-50%, -50%);
 }
 
-/ Remove transition and hover effects for larger screens /
+/* Remove transition and hover effects for larger screens */
 @media (min-width: 992px) {
     .product-card__grid-5 {
         bottom: 0;

@@ -4022,13 +4022,17 @@ transition: all ease .45s;
 }
 
 
-.title-block{
+.title-block {
   font-family: Sacramento;
-  font-size: 60px;
+  font-size: 64px;
   display: inline-block;
-  border-bottom: 3px dotted #d5dbe6;
-  margin: 50px auto;
-  padding-bottom: 15px;
+  text-align: center;
+  border-top: 1px solid #d4af37;
+  border-bottom: 1px solid #d4af37;
+  margin: 60px auto 20px;
+  padding: 5px 60px;
+  position: relative;
+  letter-spacing: 1px;
 }
 
 #shopify-section-service{
@@ -4205,3 +4209,123 @@ transition: all ease .45s;
   }
 }
 
+/* ==========================================================================
+   GLOBAL LUXURY DESIGN OVERRIDES
+   ========================================================================== */
+
+/* 1. Header & Footer Separation */
+/* A delicate golden border framing the top and bottom of the page content */
+.header-wrapper {
+   border-bottom: 1px solid rgba(212, 175, 55, 0.3) !important;
+}
+.footer, .site-footer {
+   border-top: 1px solid rgba(212, 175, 55, 0.3) !important;
+}
+
+/* 2. Elegant Search & Text Inputs */
+/* Replaces generic boxes with chic, underlined elegant inputs like editorial magazines */
+.field__input, .customer select {
+   border: none !important;
+   border-bottom: 2px solid rgba(212, 175, 55, 0.4) !important;
+   border-radius: 0 !important;
+   background-color: transparent !important;
+   color: #ffffff !important;
+   box-shadow: none !important;
+   transition: border-color 0.4s ease;
+}
+.field__input::placeholder, .customer select::placeholder, .search__input::placeholder {
+   color: rgba(255, 255, 255, 0.6) !important;
+}
+.search__input {
+   border: none !important;
+   border-bottom: 1px solid rgba(212, 175, 55, 0.4) !important;
+   border-radius: 0 !important;
+   background-color: transparent !important;
+   color: #ffffff !important;
+   box-shadow: none !important;
+}
+.field__input:focus, .customer select:focus, .search__input:focus {
+   border-bottom: 2px solid #d4af37 !important;
+   outline: none !important;
+   box-shadow: none !important;
+}
+
+/* 3. Dropdown Menu Luxury Frame */
+/* Sharp drop shadows and inner golden borders for any submenu overlays */
+.header__submenu, .mega-menu {
+   border: 1px solid rgba(212, 175, 55, 0.3) !important;
+   box-shadow: 0 15px 40px rgba(0,0,0,0.08) !important;
+}
+
+/* 4. Luxury Aesthetic for the 'Back to Top' Button */
+.js-back-to-top {
+   background-color: #ffffff !important;
+   color: #d4af37 !important; /* Set arrow color to gold */
+   border: 1px solid #d4af37 !important;
+   box-shadow: 0 5px 15px rgba(212, 175, 55, 0.15) !important;
+   transition: all 0.4s ease !important;
+}
+.js-back-to-top svg, .js-back-to-top svg path {
+   fill: currentColor !important;
+   stroke: currentColor !important;
+}
+.js-back-to-top:hover {
+   background-color: #d4af37 !important;
+   color: #ffffff !important;
+   box-shadow: 0 8px 25px rgba(212, 175, 55, 0.3) !important;
+}
+
+/* 5. Minimalist Carousel/Slideshow Dots */
+.slick-dots li button:before {
+   color: rgba(212, 175, 55, 0.45) !important;
+}
+.slick-dots li.slick-active button:before {
+   color: #d4af37 !important;
+}
+
+/* 6. Text Selection Highlight (High-End Contrast) */
+::selection {
+  background: rgba(212, 175, 55, 0.4) !important;
+  color: #1a1a1a !important;
+}
+
+/* 7. Custom Golden Scrollbar (Replaces standard grey browser slider) */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #fdfdfd;
+}
+::-webkit-scrollbar-thumb {
+  background: #d4af37;
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #b59a2f;
+}
+
+/* 8. Global Premium Gold-Framed Buttons */
+.button, .btn, a.button-content {
+  background-color: #1a1a1a !important; /* Rich obsidian black */
+  color: #ffffff !important;
+  border: 1px solid #d4af37 !important; /* Exact gold boundary */
+  box-shadow: 0 4px 15px rgba(212, 175, 55, 0.12) !important; /* Gentle cast light */
+  border-radius: 4px !important;
+  padding: 12px 28px !important; 
+  text-transform: uppercase !important;
+  font-family: 'Inter', sans-serif !important;
+  font-weight: 500 !important;
+  letter-spacing: 2px !important;
+  transition: all 0.5s cubic-bezier(0.25, 1, 0.5, 1) !important;
+  display: inline-block;
+  text-align: center;
+}
+.button:hover, .btn:hover, a.button-content:hover {
+  background-color: #d4af37 !important; /* Gold on hover */
+  color: #ffffff !important;
+  border-color: #d4af37 !important;
+  box-shadow: 0 8px 30px rgba(212, 175, 55, 0.35) !important;
+  transform: translateY(-3px) !important;
+}
+
+/* 9. Header Navigation Links (Golden Underline Expansion Hover Effect) - REMOVED DUE TO LAYOUT BUG */
