@@ -4023,16 +4023,19 @@ transition: all ease .45s;
 
 
 .title-block {
-  font-family: Sacramento;
-  font-size: 64px;
+  font-family: 'Playfair Display', serif;
+  font-size: 38px;
+  font-weight: 500;
   display: inline-block;
   text-align: center;
-  border-top: 1px solid #d4af37;
-  border-bottom: 1px solid #d4af37;
-  margin: 60px auto 20px;
-  padding: 5px 60px;
+  border-top: 1px solid rgba(212, 175, 55, 0.5);
+  border-bottom: 1px solid rgba(212, 175, 55, 0.5);
+  margin: 50px auto 25px;
+  padding: 12px 40px;
   position: relative;
-  letter-spacing: 1px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: #1a1a1a;
 }
 
 #shopify-section-service{
@@ -4147,7 +4150,9 @@ transition: all ease .45s;
     max-width: 100%;
   }
   .title-block{
-    font-size: 50px;
+    font-size: 32px;
+    padding: 10px 30px;
+    letter-spacing: 3px;
   }
 }
 @media (max-width: 768px){
@@ -4156,7 +4161,9 @@ transition: all ease .45s;
       max-width: 100%;
   }
   .title-block{
-    font-size: 40px ;
+    font-size: 26px;
+    padding: 8px 20px;
+    letter-spacing: 2px;
   }
   .fs-40{
     font-size: 30px !important;
@@ -4329,3 +4336,18 @@ transition: all ease .45s;
 }
 
 /* 9. Header Navigation Links (Golden Underline Expansion Hover Effect) - REMOVED DUE TO LAYOUT BUG */
+
+/* 10. About Us Page Editorial Enhancements */
+.content-about {
+   padding: 0 5%;
+}
+.advanced-content img {
+   border-radius: 4px;
+   box-shadow: 0 15px 45px rgba(0,0,0,0.06), 0 0 0 1px rgba(212, 175, 55, 0.2);
+   padding: 8px;
+   background-color: #ffffff;
+   transition: transform 0.4s ease;
+}
+.advanced-content img:hover {
+   transform: scale(1.02);
+}

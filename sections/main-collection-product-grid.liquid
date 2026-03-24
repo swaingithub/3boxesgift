@@ -14,13 +14,14 @@
 
 {%- assign sort_by = collection.sort_by | default: collection.default_sort_by -%}
 
-{%- if section.settings.position_left_filtering -%}
+{%- if section.settings.position_left_filtering and collection.all_products_count > 0 -%}
 <div class="main-collection-filter-left container">
 <div class="ap-left-filter">
 {%- endif -%}
 
 <div class="collection-filters {%- if section.settings.position_left_filtering != true -%}{{ 'container' | prepend: ' ' }}{%- endif -%}" id="main-collection-filters" data-id="{{ section.id }}">
   {%- if section.settings.enable_filtering or section.settings.enable_sorting -%}
+    {%- if collection.all_products_count > 0 -%}
     {%- assign total_active_values = 0 -%}
 
     {%- unless section.settings.collapse_on_larger_devices -%}
@@ -476,10 +477,11 @@
         </svg>
       </div>
     </div>
+    {%- endif -%}
   {%- endif -%}
 </div>
 
-{%- if section.settings.position_left_filtering -%}
+{%- if section.settings.position_left_filtering and collection.all_products_count > 0 -%}
 </div>
 <div class="ap-right-filter">
 {%- endif -%}
@@ -498,11 +500,23 @@
           {%- endif -%}
         </p>
 
-        <div class="title-wrapper center">
-          <h2 class="title title--primary">
-            {{ 'sections.collection_template.empty' | t }}<br>
-            {{ 'sections.collection_template.use_fewer_filters_html' | t: link: collection.url, class: "underlined-link link" }}
+        <div class="title-wrapper center empty-state-container" style="padding: 80px 20px; text-align: center; background: #fafafa; border-radius: 8px; border: 1px dashed rgba(212, 175, 55, 0.4); margin-bottom: 50px;">
+          <div class="empty-state-icon" style="margin-bottom: 20px;">
+            <svg width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="#d4af37" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+              <line x1="3" y1="6" x2="21" y2="6"></line>
+              <path d="M16 10a4 4 0 0 1-8 0"></path>
+            </svg>
+          </div>
+          <h2 class="title title--primary" style="margin-bottom: 10px; color: #b59a2f; letter-spacing: 1px; font-size: 28px;">
+            Products are not available right now ✨
           </h2>
+          <p style="margin-bottom: 30px; font-size: 16px; color: #666; max-width: 500px; margin-left: auto; margin-right: auto;">
+            We're currently resting and curating new luxurious items for this collection. Please explore our other offerings to find your perfect gift.
+          </p>
+          <a href="/collections/all" class="button button--primary" style="background-color: #0d0d0d; color: #fff; border: 1px solid #d4af37; padding: 12px 35px; letter-spacing: 2px; text-transform: uppercase; font-size: 13px; font-weight: 500;">
+            🛍️ Go Shopping
+          </a>
         </div>
       </div>
     {%- else -%}
@@ -539,7 +553,7 @@
 
 {%- render 'coupon_code' -%}
 
-{%- if section.settings.position_left_filtering -%}
+{%- if section.settings.position_left_filtering and collection.all_products_count > 0 -%}
 </div></div>
 {%- endif -%}
 {% schema %}

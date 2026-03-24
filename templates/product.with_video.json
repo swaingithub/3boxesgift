@@ -105,7 +105,7 @@
             "enable_compare": true,
             "enable_guide": true,
             "sizeguide_default": "shopify://shop_images/size-guide.jpg",
-            "sizeguide_collection_1": "frontpage",
+            "sizeguide_collection_1": "toys",
             "sizeguide_img_1": "shopify://shop_images/StannoUK-maattabellen-2020-1.jpg",
             "sizeguide_collection_2": "men",
             "sizeguide_img_2": "shopify://shop_images/StannoUK-maattabellen-2020-1.jpg",

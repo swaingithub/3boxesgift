@@ -69,7 +69,9 @@
                 <div class="text-content">
                   {%- if forloop.first -%}
                     <div style="margin-bottom: 25px;">
-                      <img src="{{ 'new-logo-blue.png' | asset_url }}" alt="3Boxes" style="max-width: 150px; height: auto; object-fit: contain;">
+                      <a href="{{ routes.root_url }}">
+                        <img src="{{ 'new-logo-gold.png' | asset_url }}" alt="3Boxes" style="max-width: 150px; height: auto; object-fit: contain;">
+                      </a>
                     </div>
                   {%- endif -%}
                   <h2 style="color:{{ section.settings.color_title }};" class="title-footer-content">

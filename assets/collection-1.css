@@ -133,6 +133,16 @@
     }
 }
 /* home 4 */
-/* .collection-content{
+.collection-1 .collection-content {
+    padding-bottom: 70% !important;
+    max-height: 260px;
     border-radius: 15px;
-} */
+}
+.collection-1 .collection-content img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}

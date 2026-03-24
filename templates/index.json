@@ -186,7 +186,7 @@
           "type": "collection",
           "settings": {
             "width": "33%",
-            "collection": "candles",
+            "collection": "scented-candle",
             "title_collection": "bottom",
             "color_text": "",
             "show_border_bottom": false,
@@ -198,7 +198,7 @@
           "type": "collection",
           "settings": {
             "width": "33%",
-            "collection": "candles-copy",
+            "collection": "perfumes",
             "title_collection": "bottom",
             "color_text": "",
             "show_border_bottom": false,
@@ -234,7 +234,7 @@
           "type": "collection",
           "settings": {
             "width": "33%",
-            "collection": "perfumes-copy",
+            "collection": "gifts",
             "title_collection": "bottom",
             "color_text": "",
             "show_border_bottom": false,
@@ -246,7 +246,7 @@
           "type": "collection",
           "settings": {
             "width": "33%",
-            "collection": "frontpage",
+            "collection": "toys",
             "title_collection": "bottom",
             "color_text": "",
             "show_border_bottom": false,
@@ -291,7 +291,7 @@
         "padding_mobile": "8px 0",
         "heading": "Featured items",
         "text_decoration": "",
-        "collection": "candles",
+        "collection": "scented-candle",
         "show_countdown_collection": false,
         "countdown_collection": "2025-12-30T00:00:00",
         "image_ratio": "adapt",

@@ -21,7 +21,7 @@
           "type": "html",
           "settings": {
             "width": "66%",
-            "html__text": "<div class=\"content-about\">\n\n    <p>3Boxes is proudly promoted by SDL Globe and spearheaded by Natasha S., a NIFT Graduate with over 6 years of experience in the fashion and lifestyle industry. Armed with a master's in Digital Marketing and a rich professional background working with distinguished companies like Tanishq, Homeshop18, and 99Jewelz, Natasha brings a wealth of expertise to the forefront.</p>\n    <p>Driven by a keen understanding of the current trends in today's gifting sector, Natasha curates gifts, scents, colors, and more for each product. Her vision is to create a box that not only contains carefully chosen items but also radiates the love and care that every customer wants to showcase.</p>\n</div>"
+            "html__text": "<div class=\"content-about text-center pt-4\">\n    <p style=\"font-size: 16px; line-height: 1.8;\">Mahesh Comes with 12+ years of Extensive experience into Lead strategic planning to achieve business goals by identifying and prioritizing development initiatives and setting timetables for the evaluation, development, and deployment of all web-based Applications, Product engineering and IT Consulting services. Prior to SDL Mahesh held technology leadership position in many companies which are funded by angel investors and Venture Capitalists.</p>\n</div>"
           }
         },
         "template--14846773952617__e6eda70b-ca23-4c62-b3a9-46c41d502887-image-1": {
@@ -38,7 +38,7 @@
         "template--14846773952617__e6eda70b-ca23-4c62-b3a9-46c41d502887-image-1"
       ],
       "custom_css": [
-        "h2 {margin-top: 6%; margin-bottom: 3%; font-family: \"Sacramento\";}",
+        "h2 {margin-top: 6%; margin-bottom: 3%; text-transform: uppercase; color: #b59a2f;}",
         ".content-about {margin-top: 30px; margin-right: 14%; text-align: justify;}"
       ],
       "settings": {
@@ -48,7 +48,7 @@
         "padding_desktop": "0px 150px",
         "margin_mobile": "",
         "padding_mobile": "0px 0px 0px 30px",
-        "heading": "Meet the Visionary - Natasha S",
+        "heading": "ABOUT FOUNDER - Mahesh Kumar Parvathareddy",
         "text_decoration": ""
       }
     },
@@ -67,16 +67,16 @@
           "type": "html",
           "settings": {
             "width": "66%",
-            "html__text": "<div class=\"content-about\">\n    <!--<h2>Our story</h2>-->\n    <p>At 3Boxes, the art of thoughtful gifting is more than just an exchange; it's an expression of love, celebration, and appreciation. Our online store is a carefully curated haven of joy, boasting a selection of meticulously crafted gift boxes designed to encapsulate the essence of meaningful surprises. Whether you're searching for the perfect gift for a friend, a special someone, or even yourself, our three boxes are meticulously fashioned with elegance, charm, and delight in mind.</p><br>\n  <div class=\"blockquote-custom mt-4 text-left\">\n    <div class=\"blockquote-custom-icon\"></div>\n    <p class=\"mb-0 mt-2 font-italic\"><b>\"The greatest gift is not found in the intricacy of wrapping, but in the warmth of the gesture.\"</b></p>\n    <div class=\"border-top d-inline-block mt-4 pt-3 bd-w2\">Natasha Sharma<br><span>NIFTIAN</span></div>\n</div>"
+            "html__text": "<div class=\"content-about\">\n    <p style=\"font-size: 16px; line-height: 1.8;\">In the realm of 3Boxes, we revolutionize gifting through meticulously crafted boxes designed for meaningful surprises. Each box exudes elegance and charm, serving as a tangible expression of love and appreciation. The true essence of a gift lies in the warmth of the gesture itself. Our diverse collection conveys messages of love and celebration, offering tangible expressions of care. 3Boxes ensures that giving becomes an unforgettable experience, where unique gifts embody joy and forge meaningful connections. Within our collection, discover that the greatest gifts are moments wrapped in thoughtfulness, eagerly awaiting to be shared and cherished.</p>\n</div>"
           }
         }
       },
       "block_order": [
-        "4459f3f6-fae5-4c41-bc20-3306cdabcdbe",
-        "20db9bb4-6395-4626-98dd-2b2890ba806e"
+        "20db9bb4-6395-4626-98dd-2b2890ba806e",
+        "4459f3f6-fae5-4c41-bc20-3306cdabcdbe"
       ],
       "custom_css": [
-        "h2 {margin-top: 5%; margin-bottom: 6%; font-family: \"Sacramento\";}",
+        "h2 {margin-top: 5%; margin-bottom: 6%; color: #b59a2f;}",
         ".content-about {margin-left: 5%; text-align: justify;}"
       ],
       "settings": {
@@ -86,7 +86,7 @@
         "padding_desktop": "0px 150px",
         "margin_mobile": "",
         "padding_mobile": "0px 0px 0px 30px",
-        "heading": "Our Story-  About  3Boxes",
+        "heading": "About Us",
         "text_decoration": ""
       }
     },
@@ -198,6 +198,142 @@
         "full_width": true
       }
     },
+    "scented_candles": {
+      "type": "advanced-content",
+      "blocks": {
+        "text_block": {
+          "type": "html",
+          "settings": {
+            "width": "50%",
+            "html__text": "<div class=\"content-about\">\n    <p style=\"font-size: 16px; line-height: 1.8; color: #333;\">Introducing our scented candle collection, designed to elevate your space with tranquil ambiance. Immerse yourself in captivating fragrances, from calming lavender to invigorating citrus. Thoughtfully crafted with premium ingredients, our candles offer a clean and prolonged burn in eco-friendly packaging. Embrace the alluring scents that transform every moment into a cherished experience. Elevate your surroundings, luxuriate in the experience, and let each flicker of the flame release a symphony of delightful aromas.</p>\n</div>"
+          }
+        },
+        "image_block": {
+          "type": "image",
+          "settings": {
+            "width": "50%",
+            "image": "shopify://shop_images/image_Dfa.webp",
+            "effects_image": false
+          }
+        }
+      },
+      "block_order": [
+        "text_block",
+        "image_block"
+      ],
+      "custom_css": [
+        "h2 {margin-top: 6%; margin-bottom: 3%; color: #b59a2f;}",
+        ".content-about {margin-top: 30px; margin-right: 14%; text-align: justify;}"
+      ],
+      "settings": {
+        "fullwidth": false,
+        "padding_desktop": "60px 150px",
+        "padding_mobile": "40px 30px",
+        "heading": "Scented Candles"
+      }
+    },
+    "jewellery": {
+      "type": "advanced-content",
+      "blocks": {
+        "text_block": {
+          "type": "html",
+          "settings": {
+            "width": "50%",
+            "html__text": "<div class=\"content-about\">\n    <p style=\"font-size: 16px; line-height: 1.8; color: #333;\">Explore our diverse jewelry collection, featuring meticulously crafted pieces using base metals, glass, and synthetic stones. From bold statements to everyday elegance, our trend-driven designs suit various styles. Express yourself affordably with ever-changing, versatile pieces for any occasion. Discover the perfect blend of affordability and individuality in our jewelry collection, offering an accessible way to express your unique style effortlessly.</p>\n</div>"
+          }
+        },
+        "image_block": {
+          "type": "image",
+          "settings": {
+            "width": "50%",
+            "image": "shopify://shop_images/image_Dfa.webp",
+            "effects_image": false
+          }
+        }
+      },
+      "block_order": [
+        "image_block",
+        "text_block"
+      ],
+      "custom_css": [
+        "h2 {margin-top: 6%; margin-bottom: 3%; color: #b59a2f;}",
+        ".content-about {margin-top: 30px; margin-right: 14%; text-align: justify;}"
+      ],
+      "settings": {
+        "fullwidth": false,
+        "padding_desktop": "60px 150px",
+        "padding_mobile": "40px 30px",
+        "heading": "Jewellery"
+      }
+    },
+    "gift_boxes": {
+      "type": "advanced-content",
+      "blocks": {
+        "text_block": {
+          "type": "html",
+          "settings": {
+            "width": "50%",
+            "html__text": "<div class=\"content-about\">\n    <p style=\"font-size: 16px; line-height: 1.8; color: #333;\">Elevate your gift-giving with our carefully crafted luxury gift boxes, designed to add an extra layer of elegance to any occasion. Reflecting premium quality and attention to detail, these exquisite boxes not only encase your chosen gifts but also ensure an indulgent and memorable unwrapping experience. Perfect for special celebrations or corporate gestures, our curated collection promises a lasting impression of refined taste and discerning generosity.</p>\n</div>"
+          }
+        },
+        "image_block": {
+          "type": "image",
+          "settings": {
+            "width": "50%",
+            "image": "shopify://shop_images/image_Dfa.webp",
+            "effects_image": false
+          }
+        }
+      },
+      "block_order": [
+        "image_block",
+        "text_block"
+      ],
+      "custom_css": [
+        "h2 {margin-top: 6%; margin-bottom: 3%; color: #b59a2f;}",
+        ".content-about {margin-top: 30px; margin-right: 14%; text-align: justify;}"
+      ],
+      "settings": {
+        "fullwidth": false,
+        "padding_desktop": "60px 150px",
+        "padding_mobile": "40px 30px",
+        "heading": "Gift Boxes"
+      }
+    },
+    "perfumes": {
+      "type": "advanced-content",
+      "blocks": {
+        "text_block": {
+          "type": "html",
+          "settings": {
+            "width": "50%",
+            "html__text": "<div class=\"content-about\">\n    <p style=\"font-size: 16px; line-height: 1.8; color: #333;\">Immerse yourself in the epitome of sophistication with our carefully curated collection of luxury perfumes. Each fragrance is a harmonious blend of rare and exquisite ingredients, meticulously crafted to evoke a sense of opulence and allure. Whether you seek a signature scent for yourself or an exquisite gift for a loved one, our luxury perfumes offer a sensory journey that transcends the ordinary, leaving an indelible mark of refinement and timeless luxury.</p>\n</div>"
+          }
+        },
+        "image_block": {
+          "type": "image",
+          "settings": {
+            "width": "50%",
+            "image": "shopify://shop_images/image_Dfa.webp",
+            "effects_image": false
+          }
+        }
+      },
+      "block_order": [
+        "text_block",
+        "image_block"
+      ],
+      "custom_css": [
+        "h2 {margin-top: 6%; margin-bottom: 3%; color: #b59a2f;}",
+        ".content-about {margin-top: 30px; margin-right: 14%; text-align: justify;}"
+      ],
+      "settings": {
+        "fullwidth": false,
+        "padding_desktop": "60px 150px",
+        "padding_mobile": "40px 30px",
+        "heading": "Perfumes"
+      }
+    },
     "1638170217226e1fe6": {
       "type": "advanced-content",
       "blocks": {
@@ -205,33 +341,39 @@
           "type": "html",
           "settings": {
             "width": "100%",
-            "html__text": "<div class=\"feel-about\"><h3 class=\"aboutus__action-title\">Feel free, move free</h3><div class=\"aboutus__action-des\">Enjoy the feeling of freedom, that’s the feeling we want to capture when we design our products.</div><a class=\"btn btn-theme\" href=\"/collections/all\">Explore products</a></div>"
+            "html__text": "<div class=\"feel-about text-center\" style=\"max-width: 900px; margin: 0 auto;\"><p style=\"font-size: 18px; line-height: 1.8;\">3Boxes—a testament to the art of thoughtful gifting. Beyond mere exchanges, 3Boxes embodies love, celebration, and appreciation. Our carefully curated luxury offerings redefine the gifting experience, transforming it into a tangible symbol of sophistication and heartfelt sentiment. Step into the world of 3Boxes, where each gift signifies an extraordinary journey of giving and receiving.</p></div>"
           }
         }
       },
       "block_order": [
         "80c9b2b7-b778-40a7-820d-3d90a6ee9d53"
       ],
-      "disabled": true,
+      "custom_css": [
+        "h2 {margin-top: 6%; margin-bottom: 3%; text-transform: uppercase; color: #b59a2f;}"
+      ],
       "settings": {
         "fullwidth": false,
         "background-color": "",
         "margin_desktop": "",
         "padding_desktop": "",
         "margin_mobile": "",
-        "padding_mobile": "",
-        "heading": "",
+        "padding_mobile": "20px",
+        "heading": "3BOXES LUXURY CURATIONS",
         "text_decoration": ""
       }
     }
   },
   "order": [
     "main",
-    "e6eda70b-ca23-4c62-b3a9-46c41d502887",
+    "1638170217226e1fe6",
+    "scented_candles",
+    "jewellery",
+    "gift_boxes",
+    "perfumes",
     "advanced",
+    "e6eda70b-ca23-4c62-b3a9-46c41d502887",
     "services",
     "team-work",
-    "video",
-    "1638170217226e1fe6"
+    "video"
   ]
 }
