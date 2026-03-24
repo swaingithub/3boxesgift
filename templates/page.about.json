@@ -1,12 +1,3 @@
-/*
- * ------------------------------------------------------------
- * IMPORTANT: The contents of this file are auto-generated.
- *
- * This file may be updated by the Shopify admin theme editor
- * or related systems. Please exercise caution as any changes
- * made to this file may be overwritten.
- * ------------------------------------------------------------
- */
 {
   "sections": {
     "main": {
@@ -180,9 +171,9 @@
         "d96fc377-275a-4264-a700-3202520a3c47",
         "0d1eb48d-5f9f-4d77-a581-9f88f00384a5"
       ],
-      "disabled": true,
+      "disabled": false,
       "settings": {
-        "team_title": "Meet our people",
+        "team_title": "Our Management Team",
         "team_fb": "https://www.facebook.com/",
         "team_tw": "https://twitter.com/?lang=vi",
         "team_tiktok": "https://www.tiktok.com/vi-VN/"
@@ -196,142 +187,6 @@
         "video_url": "https://www.youtube.com/watch?v=XHOmBV4js_E",
         "description": "",
         "full_width": true
-      }
-    },
-    "scented_candles": {
-      "type": "advanced-content",
-      "blocks": {
-        "text_block": {
-          "type": "html",
-          "settings": {
-            "width": "50%",
-            "html__text": "<div class=\"content-about\">\n    <p style=\"font-size: 16px; line-height: 1.8; color: #333;\">Introducing our scented candle collection, designed to elevate your space with tranquil ambiance. Immerse yourself in captivating fragrances, from calming lavender to invigorating citrus. Thoughtfully crafted with premium ingredients, our candles offer a clean and prolonged burn in eco-friendly packaging. Embrace the alluring scents that transform every moment into a cherished experience. Elevate your surroundings, luxuriate in the experience, and let each flicker of the flame release a symphony of delightful aromas.</p>\n</div>"
-          }
-        },
-        "image_block": {
-          "type": "image",
-          "settings": {
-            "width": "50%",
-            "image": "shopify://shop_images/image_Dfa.webp",
-            "effects_image": false
-          }
-        }
-      },
-      "block_order": [
-        "text_block",
-        "image_block"
-      ],
-      "custom_css": [
-        "h2 {margin-top: 6%; margin-bottom: 3%; color: #b59a2f;}",
-        ".content-about {margin-top: 30px; margin-right: 14%; text-align: justify;}"
-      ],
-      "settings": {
-        "fullwidth": false,
-        "padding_desktop": "60px 150px",
-        "padding_mobile": "40px 30px",
-        "heading": "Scented Candles"
-      }
-    },
-    "jewellery": {
-      "type": "advanced-content",
-      "blocks": {
-        "text_block": {
-          "type": "html",
-          "settings": {
-            "width": "50%",
-            "html__text": "<div class=\"content-about\">\n    <p style=\"font-size: 16px; line-height: 1.8; color: #333;\">Explore our diverse jewelry collection, featuring meticulously crafted pieces using base metals, glass, and synthetic stones. From bold statements to everyday elegance, our trend-driven designs suit various styles. Express yourself affordably with ever-changing, versatile pieces for any occasion. Discover the perfect blend of affordability and individuality in our jewelry collection, offering an accessible way to express your unique style effortlessly.</p>\n</div>"
-          }
-        },
-        "image_block": {
-          "type": "image",
-          "settings": {
-            "width": "50%",
-            "image": "shopify://shop_images/image_Dfa.webp",
-            "effects_image": false
-          }
-        }
-      },
-      "block_order": [
-        "image_block",
-        "text_block"
-      ],
-      "custom_css": [
-        "h2 {margin-top: 6%; margin-bottom: 3%; color: #b59a2f;}",
-        ".content-about {margin-top: 30px; margin-right: 14%; text-align: justify;}"
-      ],
-      "settings": {
-        "fullwidth": false,
-        "padding_desktop": "60px 150px",
-        "padding_mobile": "40px 30px",
-        "heading": "Jewellery"
-      }
-    },
-    "gift_boxes": {
-      "type": "advanced-content",
-      "blocks": {
-        "text_block": {
-          "type": "html",
-          "settings": {
-            "width": "50%",
-            "html__text": "<div class=\"content-about\">\n    <p style=\"font-size: 16px; line-height: 1.8; color: #333;\">Elevate your gift-giving with our carefully crafted luxury gift boxes, designed to add an extra layer of elegance to any occasion. Reflecting premium quality and attention to detail, these exquisite boxes not only encase your chosen gifts but also ensure an indulgent and memorable unwrapping experience. Perfect for special celebrations or corporate gestures, our curated collection promises a lasting impression of refined taste and discerning generosity.</p>\n</div>"
-          }
-        },
-        "image_block": {
-          "type": "image",
-          "settings": {
-            "width": "50%",
-            "image": "shopify://shop_images/image_Dfa.webp",
-            "effects_image": false
-          }
-        }
-      },
-      "block_order": [
-        "image_block",
-        "text_block"
-      ],
-      "custom_css": [
-        "h2 {margin-top: 6%; margin-bottom: 3%; color: #b59a2f;}",
-        ".content-about {margin-top: 30px; margin-right: 14%; text-align: justify;}"
-      ],
-      "settings": {
-        "fullwidth": false,
-        "padding_desktop": "60px 150px",
-        "padding_mobile": "40px 30px",
-        "heading": "Gift Boxes"
-      }
-    },
-    "perfumes": {
-      "type": "advanced-content",
-      "blocks": {
-        "text_block": {
-          "type": "html",
-          "settings": {
-            "width": "50%",
-            "html__text": "<div class=\"content-about\">\n    <p style=\"font-size: 16px; line-height: 1.8; color: #333;\">Immerse yourself in the epitome of sophistication with our carefully curated collection of luxury perfumes. Each fragrance is a harmonious blend of rare and exquisite ingredients, meticulously crafted to evoke a sense of opulence and allure. Whether you seek a signature scent for yourself or an exquisite gift for a loved one, our luxury perfumes offer a sensory journey that transcends the ordinary, leaving an indelible mark of refinement and timeless luxury.</p>\n</div>"
-          }
-        },
-        "image_block": {
-          "type": "image",
-          "settings": {
-            "width": "50%",
-            "image": "shopify://shop_images/image_Dfa.webp",
-            "effects_image": false
-          }
-        }
-      },
-      "block_order": [
-        "text_block",
-        "image_block"
-      ],
-      "custom_css": [
-        "h2 {margin-top: 6%; margin-bottom: 3%; color: #b59a2f;}",
-        ".content-about {margin-top: 30px; margin-right: 14%; text-align: justify;}"
-      ],
-      "settings": {
-        "fullwidth": false,
-        "padding_desktop": "60px 150px",
-        "padding_mobile": "40px 30px",
-        "heading": "Perfumes"
       }
     },
     "1638170217226e1fe6": {
@@ -366,14 +221,10 @@
   "order": [
     "main",
     "1638170217226e1fe6",
-    "scented_candles",
-    "jewellery",
-    "gift_boxes",
-    "perfumes",
     "advanced",
     "e6eda70b-ca23-4c62-b3a9-46c41d502887",
-    "services",
     "team-work",
+    "services",
     "video"
   ]
 }

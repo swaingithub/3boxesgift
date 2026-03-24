@@ -74,6 +74,7 @@
         },
         "fbe4fb80-687b-45f4-8cf8-9deb9163582d": {
           "type": "slide",
+          "disabled": true,
           "settings": {
             "image_slide": "shopify://shop_images/EN_Top-Premium-Corporate-Gifts_Blog-Header_1.jpg",
             "sub_title": "",
@@ -89,6 +90,7 @@
         },
         "a03a3ada-eb80-4317-8fe0-5169e9da4ea3": {
           "type": "slide",
+          "disabled": true,
           "settings": {
             "image_slide": "shopify://shop_images/3boxes_banners_5_1.jpg",
             "sub_title": "",
@@ -104,6 +106,7 @@
         },
         "16419587335615bfb4-0": {
           "type": "slide",
+          "disabled": true,
           "settings": {
             "image_slide": "shopify://shop_images/How_To_Choose_Perfect_Gift_For_Your_Partner_1.jpg",
             "sub_title": "",

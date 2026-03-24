@@ -1,0 +1,217 @@
+.catalog-download-section {
+  display: flex;
+  justify-content: center;
+  padding: 0 1.5rem;
+}
+
+.catalog-download-card {
+  display: flex;
+  flex-direction: column;
+  background: linear-gradient(135deg, #1f1f1f, #0d0d0d);
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: 0 30px 60px rgba(0,0,0,0.3);
+  max-width: 1200px;
+  width: 100%;
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+@media (min-width: 900px) {
+  .catalog-download-card {
+    flex-direction: row;
+    align-items: stretch;
+  }
+}
+
+.catalog-download-content {
+  padding: 50px 40px;
+  flex: 1 1 60%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+@media (min-width: 900px) {
+  .catalog-download-content {
+    padding: 70px 60px;
+  }
+}
+
+.catalog-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.2rem;
+  font-weight: 600;
+  margin-bottom: 20px;
+  color: #dbb366; /* Elegant gold tone */
+  line-height: 1.2;
+}
+
+@media (min-width: 900px) {
+  .catalog-title {
+    font-size: 3rem;
+  }
+}
+
+.catalog-subtitle {
+  font-family: 'Inter', sans-serif;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #adadad;
+  margin-bottom: 40px;
+  max-width: 600px;
+}
+
+/* New CSS for PDF Blocks */
+.catalog-pdf-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+}
+
+.catalog-pdf-item {
+  display: flex;
+  flex-direction: column;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 16px;
+  padding: 20px;
+  gap: 16px;
+  transition: all 0.3s ease;
+}
+
+.catalog-pdf-item:hover {
+  background: rgba(255, 255, 255, 0.06);
+  border-color: rgba(219, 179, 102, 0.3);
+}
+
+@media (min-width: 600px) {
+  .catalog-pdf-item {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+
+.catalog-pdf-info {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.catalog-pdf-info svg {
+  width: 24px;
+  height: 24px;
+  color: #dbb366;
+}
+
+.catalog-pdf-title {
+  font-family: 'Inter', sans-serif;
+  font-size: 1.15rem;
+  font-weight: 500;
+  color: #ffffff;
+}
+
+.catalog-pdf-empty,
+.catalog-pdf-missing {
+  font-family: 'Inter', sans-serif;
+  color: #adadad;
+  font-size: 0.95rem;
+  font-style: italic;
+}
+
+.catalog-actions {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.catalog-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 20px;
+  border-radius: 10px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 500;
+  font-size: 0.95rem;
+  text-decoration: none;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
+  gap: 8px;
+}
+
+.catalog-btn svg {
+  width: 18px;
+  height: 18px;
+}
+
+.btn-text {
+  display: inline-block;
+}
+
+.catalog-btn--view {
+  background: transparent;
+  color: #dbb366;
+  border: 1px solid rgba(219, 179, 102, 0.4);
+}
+
+.catalog-btn--view:hover {
+  background: rgba(219, 179, 102, 0.08);
+  border-color: #dbb366;
+  transform: translateY(-2px);
+}
+
+.catalog-btn--download {
+  background: #dbb366;
+  color: #121212;
+  border: 1px solid #dbb366;
+  box-shadow: 0 4px 14px rgba(219, 179, 102, 0.2);
+}
+
+.catalog-btn--download:hover {
+  background: #ecd194;
+  border-color: #ecd194;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(219, 179, 102, 0.3);
+}
+
+.catalog-download-image {
+  flex: 1 1 40%;
+  min-height: 350px;
+  position: relative;
+  background-color: #000;
+}
+
+.catalog-download-image img {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  object-fit: cover;
+  clip-path: polygon(10% 0, 100% 0, 100% 100%, 0% 100%);
+}
+
+@media (max-width: 899px) {
+  .catalog-download-image {
+    min-height: 250px;
+  }
+  .catalog-download-image img {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+  }
+}
+
+.catalog-download-placeholder {
+  background: linear-gradient(135deg, #dbb366, #b08d4b);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@media (min-width: 900px) {
+    .catalog-download-placeholder {
+        clip-path: polygon(10% 0, 100% 0, 100% 100%, 0% 100%);
+    }
+}

@@ -42,6 +42,33 @@
         "collapse_on_larger_devices": false
       }
     },
+    "catalog-download": {
+      "type": "catalog-download",
+      "blocks": {
+        "pdf_R9JCqf": {
+          "type": "pdf",
+          "settings": {
+            "title": "Catalog 2",
+            "pdf_link": "https://cdn.shopify.com/s/files/1/0674/7327/7150/files/3Boxes_Collage.pdf?v=1774367969"
+          }
+        },
+        "pdf-block-1": {
+          "type": "pdf",
+          "settings": {
+            "title": "Corporate Catalog 1",
+            "pdf_link": "https://cdn.shopify.com/s/files/1/0674/7327/7150/files/Corporate_Gift.pdf?v=1774367968"
+          }
+        }
+      },
+      "block_order": [
+        "pdf_R9JCqf",
+        "pdf-block-1"
+      ],
+      "settings": {
+        "catalog_title": "Corporate Gifting Catalog",
+        "catalog_subtitle": "Explore our curated collection of premium corporate gifts designed to impress. Download our catalog to discover the perfect gifts for your clients and team."
+      }
+    },
     "8988eaac-d104-481b-88b3-80669af802a6": {
       "type": "custom-liquid",
       "disabled": true,
@@ -124,6 +151,7 @@
   "order": [
     "banner",
     "product-grid",
+    "catalog-download",
     "8988eaac-d104-481b-88b3-80669af802a6",
     "88d001cc-2bac-40e7-9c59-12440e14de25",
     "5a934bf7-39fe-4844-9084-323ff04dbb2d"

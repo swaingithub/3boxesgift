@@ -1,0 +1,104 @@
+{{ 'catalog-download.css' | asset_url | stylesheet_tag }}
+
+<div class="catalog-download-section container" style="margin-top: 50px; margin-bottom: 50px;">
+  <div class="catalog-download-card">
+    <div class="catalog-download-content">
+      <h2 class="catalog-title">{{ section.settings.catalog_title }}</h2>
+      <p class="catalog-subtitle">{{ section.settings.catalog_subtitle }}</p>
+      
+      <div class="catalog-pdf-list">
+        {%- if section.blocks.size > 0 -%}
+          {%- for block in section.blocks -%}
+            <div class="catalog-pdf-item" {{ block.shopify_attributes }}>
+              <div class="catalog-pdf-info">
+                <svg viewBox="0 0 24 24" fill="none" class="icon-file"><path d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z" fill="currentColor"/></svg>
+                <span class="catalog-pdf-title">{{ block.settings.title }}</span>
+              </div>
+              
+              <div class="catalog-actions">
+                {% if block.settings.pdf_link != blank %}
+                  <a href="{{ block.settings.pdf_link }}" target="_blank" class="catalog-btn catalog-btn--view" title="View">
+                    <svg viewBox="0 0 24 24" fill="none" class="icon-view" aria-hidden="true"><path d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zm0 12.5c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z" fill="currentColor"/></svg>
+                    <span class="btn-text">View</span>
+                  </a>
+                  <a href="{{ block.settings.pdf_link }}" download class="catalog-btn catalog-btn--download" title="Download">
+                    <svg viewBox="0 0 24 24" fill="none" class="icon-download" aria-hidden="true"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z" fill="currentColor"/></svg>
+                    <span class="btn-text">Download</span>
+                  </a>
+                {% else %}
+                  <p class="catalog-pdf-missing">PDF Link not set</p>
+                {% endif %}
+              </div>
+            </div>
+          {%- endfor -%}
+        {%- else -%}
+          <p class="catalog-pdf-empty">Please add PDF items in the Theme Editor.</p>
+        {%- endif -%}
+      </div>
+    </div>
+    {% if section.settings.catalog_image != blank %}
+      <div class="catalog-download-image">
+        <img src="{{ section.settings.catalog_image | img_url: 'master' }}" alt="{{ section.settings.catalog_title | escape }}">
+      </div>
+    {% else %}
+      <div class="catalog-download-image catalog-download-placeholder">
+        <!-- Placeholder overlay if needed -->
+      </div>
+    {% endif %}
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Catalog Download",
+  "settings": [
+    {
+      "type": "text",
+      "id": "catalog_title",
+      "label": "Heading",
+      "default": "Corporate Gifting Catalog"
+    },
+    {
+      "type": "textarea",
+      "id": "catalog_subtitle",
+      "label": "Subheading",
+      "default": "Explore our curated collection of premium corporate gifts designed to impress. Download our catalog to discover the perfect gifts for your clients, partners, and team members."
+    },
+    {
+      "type": "image_picker",
+      "id": "catalog_image",
+      "label": "Catalog Cover Image"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "pdf",
+      "name": "PDF Document",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+          "default": "Main Catalog 2024"
+        },
+        {
+          "type": "url",
+          "id": "pdf_link",
+          "label": "PDF Link",
+          "info": "Upload your PDF to Shopify Files (Settings -> Files) and paste the URL here."
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Catalog Download UI",
+      "blocks": [
+        {
+          "type": "pdf"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
