@@ -125,11 +125,9 @@
             "specific_tab_title4": "Sign in"
           }
         },
-        "6664f570-abb7-4925-8226-ea2aa2a6ec13": {
-          "type": "custom_liquid",
-          "settings": {
-            "custom_liquid": "<form id=\"imageUploadForm\">\n  <input type=\"file\" id=\"imageInput\" accept=\"image/*\">\n  <button type=\"button\" onclick=\"uploadImage()\">Upload Image</button>\n</form>"
-          }
+        "ai_try_on": {
+          "type": "ai_try_on",
+          "settings": {}
         }
       },
       "block_order": [
@@ -147,8 +145,8 @@
         "9df41162-ee14-4b1a-961c-8a7155ea44ef",
         "d004d14a-625e-4bd6-894a-b5f1d17285ca",
         "3dd9be9d-1f1b-445c-8a94-217dd49caf1c",
-        "1f38c27f-8d69-4c99-aaf8-76b33882eac3",
-        "6664f570-abb7-4925-8226-ea2aa2a6ec13"
+        "ai_try_on",
+        "1f38c27f-8d69-4c99-aaf8-76b33882eac3"
       ],
       "custom_css": [],
       "settings": {

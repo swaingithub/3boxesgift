@@ -197,6 +197,103 @@
             "image_collection": "shopify://shop_images/image_QwT2_1.5x.png"
           }
         },
+        "collection_xUxVR9": {
+          "type": "collection",
+          "settings": {
+            "width": "33%",
+            "collection": "birthday",
+            "title_collection": "bottom",
+            "color_text": "",
+            "show_border_bottom": false,
+            "pd_bottom": "0",
+            "image_collection": "shopify://shop_images/image_71773bca-c462-4134-a445-526be9ac5fff.png"
+          }
+        },
+        "collection_bfw9Xq": {
+          "type": "collection",
+          "settings": {
+            "width": "33%",
+            "collection": "love",
+            "title_collection": "bottom",
+            "color_text": "",
+            "show_border_bottom": false,
+            "pd_bottom": "0",
+            "image_collection": "shopify://shop_images/image_24950648-fea9-46f1-868d-9154d7da196c.png"
+          }
+        },
+        "collection_9ngyHX": {
+          "type": "collection",
+          "disabled": true,
+          "settings": {
+            "width": "33%",
+            "collection": "men",
+            "title_collection": "bottom",
+            "color_text": "",
+            "show_border_bottom": false,
+            "pd_bottom": "0",
+            "image_collection": "shopify://shop_images/image_1106950f-0fa1-4d32-b49f-6523a14fdec7.png"
+          }
+        },
+        "collection_pqN4aX": {
+          "type": "collection",
+          "settings": {
+            "width": "33%",
+            "collection": "beauty",
+            "title_collection": "bottom",
+            "color_text": "",
+            "show_border_bottom": false,
+            "pd_bottom": "0",
+            "image_collection": "shopify://shop_images/image_943e85cb-62de-4506-aec2-7436f172392f.png"
+          }
+        },
+        "collection_Exybya": {
+          "type": "collection",
+          "settings": {
+            "width": "33%",
+            "collection": "home-decor",
+            "title_collection": "bottom",
+            "color_text": "",
+            "show_border_bottom": false,
+            "pd_bottom": "0",
+            "image_collection": "shopify://shop_images/image_465328d6-219e-43ce-87ce-b3ede22bdf91.png"
+          }
+        },
+        "collection_GC7TdU": {
+          "type": "collection",
+          "settings": {
+            "width": "33%",
+            "collection": "men-gift-hamper",
+            "title_collection": "bottom",
+            "color_text": "",
+            "show_border_bottom": false,
+            "pd_bottom": "0",
+            "image_collection": "shopify://shop_images/image_19d3a852-70dd-46d6-83b8-c29644543e00.png"
+          }
+        },
+        "collection_LjifPh": {
+          "type": "collection",
+          "settings": {
+            "width": "33%",
+            "collection": "men-grooming-kit",
+            "title_collection": "bottom",
+            "color_text": "",
+            "show_border_bottom": false,
+            "pd_bottom": "0",
+            "image_collection": "shopify://shop_images/image_20245519-0f4e-467e-8dc6-41cb0c7d78b1.png"
+          }
+        },
+        "collection_qFC8LN": {
+          "type": "collection",
+          "settings": {
+            "width": "33%",
+            "collection": "travel",
+            "title_collection": "bottom",
+            "color_text": "",
+            "show_border_bottom": false,
+            "pd_bottom": "0",
+            "image_collection": "shopify://shop_images/image_4afd9df6-5c51-4477-8b55-317cf80768e1.png"
+          }
+        },
         "1641972176dd254f41-2": {
           "type": "collection",
           "settings": {
@@ -247,6 +344,7 @@
         },
         "1641972176dd254f41-1": {
           "type": "collection",
+          "disabled": true,
           "settings": {
             "width": "33%",
             "collection": "toys",
@@ -260,6 +358,14 @@
       },
       "block_order": [
         "1641972176dd254f41-0",
+        "collection_xUxVR9",
+        "collection_bfw9Xq",
+        "collection_9ngyHX",
+        "collection_pqN4aX",
+        "collection_Exybya",
+        "collection_GC7TdU",
+        "collection_LjifPh",
+        "collection_qFC8LN",
         "1641972176dd254f41-2",
         "collection_CKiwim",
         "collection_VyNWTd",

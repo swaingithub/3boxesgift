@@ -580,6 +580,31 @@
               {%- endform -%}
             </product-form>
         	{%- endif -%}
+
+        {%- when 'ai_try_on' -%}
+          {%- assign is_wearable = false -%}
+          {%- assign p_type = product.type | downcase -%}
+          {%- assign p_tags = product.tags | join: ',' | downcase -%}
+          
+          {%- comment -%} Check Product Type and Tags {%- endcomment -%}
+          {%- if p_type contains 'jewel' or p_type contains 'ring' or p_type contains 'necklace' or p_type contains 'earring' or p_type contains 'bracelet' or p_type contains 'dress' or p_type contains 'shirt' or p_type contains 'cloth' or p_type contains 'apparel' or p_tags contains 'jewel' or p_tags contains 'ring' or p_tags contains 'necklace' or p_tags contains 'earring' or p_tags contains 'bracelet' or p_tags contains 'pendant' or p_tags contains 'try-on' -%}
+            {%- assign is_wearable = true -%}
+          {%- endif -%}
+
+          {%- comment -%} Check Collection Handles {%- endcomment -%}
+          {%- unless is_wearable -%}
+            {%- for collection in product.collections -%}
+              {%- assign c_handle = collection.handle -%}
+              {%- if c_handle contains 'jewel' or c_handle contains 'dress' or c_handle contains 'apparel' or c_handle contains 'clothing' or c_handle contains 'wear' -%}
+                {%- assign is_wearable = true -%}
+                {%- break -%}
+              {%- endif -%}
+            {%- endfor -%}
+          {%- endunless -%}
+
+          {%- if is_wearable -%}
+            {% render 'ai-try-on' %}
+          {%- endif -%}
 		      {%- when 'tab_description' -%}
         	{%- if block.settings.tab_position_display != 'bottom' -%}
         		{% render 'tab_description', product, settings: block.settings %}
@@ -1411,6 +1436,12 @@
           "info": "t:sections.main-product.blocks.custom_liquid.settings.custom_liquid.info"
         }
       ]
+    },
+    {
+      "type": "ai_try_on",
+      "name": "Virtual Try-On",
+      "limit": 1,
+      "settings": []
     },
     {
       "type": "collapsible_tab",

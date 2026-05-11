@@ -1,0 +1,621 @@
+{% comment %}
+  Luxury AI Chatbot for 3Boxes Gifts
+  A floating, responsive, premium-designed conversational AI interface.
+{% endcomment %}
+
+<div id="ai-agent-container" class="ai-agent-wrapper">
+  <!-- Floating Bubble Trigger -->
+  <button id="ai-chat-bubble" class="ai-chat-trigger" aria-label="Open AI Assistant">
+    <div class="glow-layer"></div>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="chat-icon">
+      <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+    </svg>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="close-icon" style="display: none;">
+      <line x1="18" y1="6" x2="6" y2="18"></line>
+      <line x1="6" y1="6" x2="18" y2="18"></line>
+    </svg>
+  </button>
+
+  <!-- Chat Window -->
+  <div id="ai-chat-window" class="ai-chat-panel">
+    <!-- Header -->
+    <div class="chat-header">
+      <div class="header-branding">
+        <div class="agent-avatar">
+          <span class="avatar-shimmer"></span>
+          💎
+        </div>
+        <div class="agent-info">
+          <h3>3Boxes AI Concierge</h3>
+          <span class="online-indicator"><span class="pulse"></span> Active</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Messages Container -->
+    <div id="chat-messages" class="chat-body">
+      <div class="message-bubble system">
+        <p>Welcome to 3Boxes Luxury Concierge. How may I assist you with curated gifting today?</p>
+        <span class="msg-time">Just now</span>
+      </div>
+    </div>
+
+    <!-- Typing Indicator -->
+    <div id="typing-indicator" class="typing-loading" style="display: none;">
+      <span></span><span></span><span></span>
+    </div>
+
+    <!-- Input Area -->
+    <div class="chat-footer">
+      <div class="quick-actions">
+        <button class="qa-btn" data-query="Show me your latest Jewellary collection">💎 Jewellary</button>
+        <button class="qa-btn" data-query="I'm looking for Scented Candles">🕯️ Candles</button>
+        <button class="qa-btn" data-query="Corporate gifting solutions">🏢 Corporate</button>
+        <button class="qa-btn" data-query="Best Men's Gift Hampers">🎁 Men Hampers</button>
+      </div>
+      <div class="input-wrapper">
+        <label for="chat-vision-input" class="vision-trigger" title="Analyze an image">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"></path>
+            <circle cx="12" cy="13" r="4"></circle>
+          </svg>
+          <input type="file" id="chat-vision-input" accept="image/*" style="display: none;">
+        </label>
+        <input type="text" id="chat-input" placeholder="Ask about products, advice..." aria-label="Type message">
+        <button id="chat-send" aria-label="Send message">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="22" y1="2" x2="11" y2="13"></line>
+            <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+  /* Premium CSS for AI Assistant */
+  :root {
+    --primary-gold: #d4af37;
+    --dark-gold: #aa8c2c;
+    --luxury-dark: #121212;
+    --luxury-card: rgba(26, 26, 26, 0.95);
+    --frosted-blur: 20px;
+  }
+
+  .ai-agent-wrapper {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    z-index: 10000;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  }
+
+  .ai-chat-trigger {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--luxury-dark), #000);
+    border: 2px solid var(--primary-gold);
+    color: var(--primary-gold);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5), 0 0 15px rgba(212, 175, 55, 0.2);
+    position: relative;
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    outline: none;
+  }
+
+  .ai-chat-trigger:hover {
+    transform: translateY(-5px) scale(1.05);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6), 0 0 20px rgba(212, 175, 55, 0.4);
+  }
+
+  .ai-chat-trigger .glow-layer {
+    position: absolute;
+    top: -5px; left: -5px; right: -5px; bottom: -5px;
+    border-radius: 50%;
+    background: radial-gradient(circle, var(--primary-gold) 0%, transparent 70%);
+    opacity: 0.1;
+    z-index: -1;
+    animation: pulseGlow 3s infinite;
+  }
+
+  .ai-chat-trigger svg {
+    width: 24px;
+    height: 24px;
+    transition: transform 0.3s;
+  }
+
+  /* Chat Window */
+  .ai-chat-panel {
+    position: absolute;
+    bottom: 80px;
+    right: 0;
+    width: 380px;
+    height: 600px;
+    max-height: calc(100vh - 120px);
+    background: var(--luxury-card);
+    backdrop-filter: blur(var(--frosted-blur));
+    -webkit-backdrop-filter: blur(var(--frosted-blur));
+    border: 1px solid rgba(212, 175, 55, 0.3);
+    border-radius: 20px;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    transform: scale(0.9) translateY(20px);
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+  }
+
+  .ai-chat-panel.active {
+    transform: scale(1) translateY(0);
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  /* Header */
+  .chat-header {
+    background: rgba(0, 0, 0, 0.8);
+    padding: 20px;
+    border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+  }
+
+  .header-branding {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+  }
+
+  .agent-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--primary-gold), var(--dark-gold));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    position: relative;
+    box-shadow: 0 0 10px rgba(212, 175, 55, 0.3);
+  }
+
+  .avatar-shimmer {
+    position: absolute;
+    top: 0; left: -50%;
+    width: 50%; height: 100%;
+    background: rgba(255, 255, 255, 0.2);
+    transform: skewX(-25deg);
+    animation: shimmer 2.5s infinite;
+  }
+
+  .agent-info h3 {
+    margin: 0;
+    font-size: 16px;
+    font-weight: 600;
+    color: #fff;
+  }
+
+  .online-indicator {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 11px;
+    color: #4cd137;
+    margin-top: 2px;
+  }
+
+  .online-indicator .pulse {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background-color: #4cd137;
+    box-shadow: 0 0 5px #4cd137;
+    animation: blink 2s infinite;
+  }
+
+  /* Chat Body */
+  .chat-body {
+    flex: 1;
+    padding: 20px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    background: rgba(18, 18, 18, 0.6);
+  }
+
+  .message-bubble {
+    padding: 12px 16px;
+    border-radius: 16px;
+    max-width: 85%;
+    position: relative;
+    animation: slideIn 0.3s ease;
+    font-size: 14px;
+    line-height: 1.5;
+    word-wrap: break-word;
+  }
+
+  .message-bubble p {
+    margin: 0;
+    white-space: pre-wrap;
+  }
+
+  .message-bubble.system {
+    background: rgba(255, 255, 255, 0.08);
+    color: #f0f0f0;
+    align-self: flex-start;
+    border-bottom-left-radius: 4px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+  }
+
+  .message-bubble.user {
+    background: linear-gradient(135deg, var(--primary-gold), var(--dark-gold));
+    color: #000;
+    font-weight: 500;
+    align-self: flex-end;
+    border-bottom-right-radius: 4px;
+    box-shadow: 0 4px 15px rgba(212, 175, 55, 0.2);
+  }
+
+  .msg-time {
+    display: block;
+    font-size: 10px;
+    margin-top: 5px;
+    opacity: 0.6;
+    text-align: right;
+  }
+
+  /* Typing Indicator */
+  .typing-loading {
+    padding: 10px 20px;
+    display: flex;
+    gap: 5px;
+    align-self: flex-start;
+  }
+
+  .typing-loading span {
+    width: 8px;
+    height: 8px;
+    background-color: var(--primary-gold);
+    border-radius: 50%;
+    opacity: 0.4;
+    animation: typing 1.4s infinite;
+  }
+
+  .typing-loading span:nth-child(2) { animation-delay: 0.2s; }
+  .typing-loading span:nth-child(3) { animation-delay: 0.4s; }
+
+  /* Chat Footer */
+  .chat-footer {
+    padding: 15px 20px;
+    background: rgba(0, 0, 0, 0.8);
+    border-top: 1px solid rgba(212, 175, 55, 0.2);
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .quick-actions {
+    display: flex;
+    gap: 8px;
+    overflow-x: auto;
+    padding-bottom: 5px;
+  }
+
+  .quick-actions::-webkit-scrollbar { display: none; }
+
+  .qa-btn {
+    padding: 6px 12px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(212, 175, 55, 0.2);
+    border-radius: 20px;
+    color: #fff;
+    font-size: 12px;
+    white-space: nowrap;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+
+  .qa-btn:hover {
+    background: rgba(212, 175, 55, 0.1);
+    border-color: var(--primary-gold);
+  }
+
+  .input-wrapper {
+    display: flex;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(212, 175, 55, 0.3);
+    border-radius: 30px;
+    padding: 5px 5px 5px 12px;
+    transition: all 0.3s;
+    gap: 8px;
+  }
+
+  .input-wrapper:focus-within {
+    border-color: var(--primary-gold);
+    box-shadow: 0 0 10px rgba(212, 175, 55, 0.2);
+  }
+
+  .vision-trigger {
+    color: var(--primary-gold);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    opacity: 0.8;
+    transition: opacity 0.2s;
+  }
+
+  .vision-trigger:hover { opacity: 1; }
+
+  .vision-trigger svg {
+    width: 20px;
+    height: 20px;
+  }
+
+  #chat-input {
+    flex: 1;
+    background: transparent;
+    border: none;
+    color: #fff;
+    font-size: 14px;
+    outline: none;
+  }
+
+  #chat-input::placeholder {
+    color: rgba(255, 255, 255, 0.4);
+  }
+
+  #chat-send {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: var(--primary-gold);
+    color: #000;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.2s;
+  }
+
+  #chat-send:hover { transform: scale(1.05); }
+
+  #chat-send svg {
+    width: 16px;
+    height: 16px;
+    margin-left: 2px;
+  }
+
+  /* Image Preview */
+  .image-preview-container {
+    width: 100%;
+    max-width: 200px;
+    border-radius: 12px;
+    overflow: hidden;
+    margin-bottom: 8px;
+    border: 1px solid var(--primary-gold);
+  }
+
+  .image-preview-container img {
+    width: 100%;
+    display: block;
+  }
+
+  /* Animations */
+  @keyframes pulseGlow {
+    0%, 100% { transform: scale(1); opacity: 0.1; }
+    50% { transform: scale(1.15); opacity: 0.25; }
+  }
+
+  @keyframes shimmer {
+    0% { left: -50%; }
+    100% { left: 150%; }
+  }
+
+  @keyframes blink {
+    0%, 100% { opacity: 0.2; }
+    50% { opacity: 1; }
+  }
+
+  @keyframes typing {
+    0%, 100% { transform: translateY(0); opacity: 0.4; }
+    50% { transform: translateY(-5px); opacity: 1; }
+  }
+
+  @keyframes slideIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  @media (max-width: 480px) {
+    .ai-chat-panel {
+      width: calc(100vw - 40px);
+      height: calc(100vh - 120px);
+      right: -10px;
+      bottom: 70px;
+    }
+    .ai-agent-wrapper {
+      right: 20px;
+      bottom: 20px;
+    }
+  }
+</style>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const API_BASE = 'https://try-on-featuress-cr21.vercel.app/api';
+    
+    const bubbleBtn = document.getElementById('ai-chat-bubble');
+    const chatWin = document.getElementById('ai-chat-window');
+    const closeIcon = bubbleBtn.querySelector('.close-icon');
+    const chatIcon = bubbleBtn.querySelector('.chat-icon');
+    
+    const sendBtn = document.getElementById('chat-send');
+    const chatInput = document.getElementById('chat-input');
+    const chatMessages = document.getElementById('chat-messages');
+    const typingIndicator = document.getElementById('typing-indicator');
+    const visionInput = document.getElementById('chat-vision-input');
+    
+    let messageHistory = [];
+
+    // Get Shopify Context
+    const getProductContext = () => {
+      {% if template contains 'product' %}
+        return "Current Product: {{ product.title | escape }}, Price: {{ product.price | money }}, Tags: {{ product.tags | join: ', ' | escape }}, Type: {{ product.type | escape }}, Collections: {{ product.collections | map: 'title' | join: ', ' | escape }}";
+      {% else %}
+        return "Store: {{ shop.name | escape }}, URL: {{ shop.url }}";
+      {% endif %}
+    };
+
+    // Toggle Chat Window
+    bubbleBtn.addEventListener('click', () => {
+      const isOpen = chatWin.classList.toggle('active');
+      if (isOpen) {
+        closeIcon.style.display = 'block';
+        chatIcon.style.display = 'none';
+        chatInput.focus();
+      } else {
+        closeIcon.style.display = 'none';
+        chatIcon.style.display = 'block';
+      }
+    });
+
+    // Handle Send Message
+    async function handleSendMessage(overrideText = null) {
+      const text = overrideText || chatInput.value.trim();
+      if (!text) return;
+
+      appendMessage(text, 'user');
+      chatInput.value = '';
+      
+      messageHistory.push({ role: 'user', content: text });
+      if (messageHistory.length > 10) messageHistory.shift();
+
+      showTyping(true);
+
+      try {
+        const response = await fetch(`${API_BASE}/chat`, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            messages: messageHistory,
+            productContext: getProductContext()
+          })
+        });
+
+        const data = await response.json();
+        showTyping(false);
+
+        if (data.success && data.reply) {
+          appendMessage(data.reply, 'system');
+          messageHistory.push({ role: 'assistant', content: data.reply });
+        } else {
+          const errorMsg = data.details || data.error || "Luxury network error";
+          appendMessage(`Concierge Note: ${errorMsg}. Please ensure API keys are configured.`, 'system');
+        }
+      } catch (err) {
+        showTyping(false);
+        appendMessage("Luxury assistance is currently offline. Please check your Vercel logs.", 'system');
+        console.error('Chat error:', err);
+      }
+    }
+
+    // Handle Image Analysis (Vision)
+    visionInput.addEventListener('change', async (e) => {
+      const file = e.target.files[0];
+      if (!file) return;
+
+      // Preview the image in chat
+      const reader = new FileReader();
+      reader.onload = (e) => {
+        const previewHtml = `<div class="image-preview-container"><img src="${e.target.result}" alt="Preview"></div>Analyzing your image...`;
+        appendMessage(previewHtml, 'user', true);
+      };
+      reader.readAsDataURL(file);
+
+      showTyping(true);
+
+      const formData = new FormData();
+      formData.append('productImage', file);
+      formData.append('question', "Analyze this item and tell me about it.");
+
+      try {
+        const response = await fetch(`${API_BASE}/chat/analyze-product`, {
+          method: 'POST',
+          body: formData
+        });
+
+        const data = await response.json();
+        showTyping(false);
+
+        if (data.success && data.analysis) {
+          appendMessage(data.analysis, 'system');
+          messageHistory.push({ role: 'assistant', content: data.analysis });
+        } else {
+          appendMessage("I couldn't analyze this image. Please make sure it's a clear photo of a product.", 'system');
+        }
+      } catch (err) {
+        showTyping(false);
+        appendMessage("Image analysis is currently unavailable.", 'system');
+      }
+      
+      visionInput.value = ''; // Reset input
+    });
+
+    // Quick Actions
+    document.querySelectorAll('.qa-btn').forEach(btn => {
+      btn.addEventListener('click', () => handleSendMessage(btn.dataset.query));
+    });
+
+    sendBtn.addEventListener('click', () => handleSendMessage());
+    chatInput.addEventListener('keypress', (e) => {
+      if (e.key === 'Enter') handleSendMessage();
+    });
+
+    function showTyping(show) {
+      typingIndicator.style.display = show ? 'flex' : 'none';
+      chatMessages.scrollTop = chatMessages.scrollHeight;
+    }
+
+    function appendMessage(content, sender, isHtml = false) {
+      const bubble = document.createElement('div');
+      bubble.className = `message-bubble ${sender}`;
+      
+      const p = document.createElement('p');
+      if (isHtml) {
+        p.innerHTML = content;
+      } else {
+        p.textContent = content;
+      }
+      
+      const time = document.createElement('span');
+      time.className = 'msg-time';
+      const now = new Date();
+      time.textContent = now.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+
+      bubble.appendChild(p);
+      bubble.appendChild(time);
+      chatMessages.appendChild(bubble);
+      chatMessages.scrollTop = chatMessages.scrollHeight;
+    }
+  });
+</script>
+
+{% schema %}
+{
+  "name": "AI Assistant Chatbot",
+  "settings": [],
+  "presets": [
+    {
+      "name": "AI Assistant Chatbot"
+    }
+  ]
+}
+{% endschema %}
